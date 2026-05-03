@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>割安株スクリーナー &amp; バリュー投資コラム | kabu.tokyo-jp.org</title>
+<meta name="description" content="清原達郎式ネットキャッシュ比率（NC比率）で東証上場の割安株を自動スクリーニング。PBR・PER・ROE・時価総額でフィルター可能。バリュートラップ・安全マージン・バリュー株入門など学習コラムも掲載。">
+<meta name="keywords" content="ネットキャッシュ比率,割安株,バリュー株,スクリーニング,清原達郎,東証,小型株,PBR,PER,ROE,バリュー投資,スクリーナー">
+<link rel="canonical" href="https://kabu.tokyo-jp.org/">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3689763245760846" crossorigin="anonymous"></script>
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://kabu.tokyo-jp.org/">
+<meta property="og:site_name" content="kabu.tokyo-jp.org">
+<meta property="og:title" content="割安株スクリーナー &amp; バリュー投資コラム | kabu.tokyo-jp.org">
+<meta property="og:description" content="清原達郎式NC比率で東証割安株を自動スクリーニング。バリュー投資の学習コラムも掲載。">
+<meta property="og:image" content="https://kabu.tokyo-jp.org/netcash/ogp.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="割安株スクリーナー &amp; バリュー投資コラム | kabu.tokyo-jp.org">
+<meta name="twitter:description" content="清原達郎式NC比率で東証割安株を自動スクリーニング。バリュー投資の学習コラムも掲載。">
+<meta name="twitter:image" content="https://kabu.tokyo-jp.org/netcash/ogp.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "name": "kabu.tokyo-jp.org",
+      "url": "https://kabu.tokyo-jp.org/",
+      "description": "清原達郎式ネットキャッシュ比率による東証割安株スクリーナーと、バリュー投資学習コラムを提供。"
+    },
+    {
+      "@type": "ItemList",
+      "name": "バリュー投資学習コラム",
+      "url": "https://kabu.tokyo-jp.org/articles/",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "url": "https://kabu.tokyo-jp.org/articles/kiyohara-method.html",
+          "name": "清原達郎式「ネットキャッシュ比率」──なぜPBRより実戦的なのか"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "url": "https://kabu.tokyo-jp.org/articles/benjamin-graham.html",
+          "name": "バリュー投資の父・ベンジャミン・グレアム──「安全マージン」の思想"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "url": "https://kabu.tokyo-jp.org/articles/value-trap.html",
+          "name": "バリュートラップを見抜く──「割安の罠」を避ける7つのチェックポイント"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "url": "https://kabu.tokyo-jp.org/articles/value-indicators.html",
+          "name": "PER・PBR・ROEだけでは足りない──割安株判定で見るべき指標と落とし穴"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "url": "https://kabu.tokyo-jp.org/articles/value-vs-growth.html",
+          "name": "バリュー株とグロース株はどちらが有利か？"
+        }
+      ]
+    }
+  ]
+}
+</script>
+<style>
+:root {
+  --primary: #6366f1;
+  --primary-dark: #4f46e5;
+  --secondary: #8b5cf6;
+  --bg: #fafaff;
+  --card-bg: #ffffff;
+  --text: #1f2937;
+  --text-muted: #6b7280;
+  --border: #e5e7eb;
+  --accent-bg: #f5f3ff;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Helvetica Neue", Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  font-size: 16px;
+}
+
+/* ---- Header ---- */
+header {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  color: white;
+  padding: 0.9rem 1.5rem;
+  box-shadow: 0 2px 12px rgba(99, 102, 241, 0.2);
+}
+.header-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+}
+.header-logo { font-size: 1rem; font-weight: 700; letter-spacing: 0.02em; color: white; text-decoration: none; }
+.header-nav { display: flex; gap: 0.4rem; align-items: center; flex-wrap: wrap; }
+.header-nav a {
+  font-size: 0.72rem;
+  color: rgba(255,255,255,0.85);
+  text-decoration: none;
+  border: 1px solid rgba(255,255,255,0.4);
+  padding: 0.2rem 0.6rem;
+  border-radius: 20px;
+  transition: all 0.15s;
+  white-space: nowrap;
+}
+.header-nav a:hover { color: white; border-color: rgba(255,255,255,0.8); background: rgba(255,255,255,0.12); }
+
+/* ---- Hero ---- */
+.hero {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  color: white;
+  padding: 3.5rem 1.5rem 3rem;
+  text-align: center;
+}
+.hero h1 {
+  font-size: clamp(1.5rem, 5vw, 2.2rem);
+  font-weight: 800;
+  line-height: 1.3;
+  margin-bottom: 0.9rem;
+}
+.hero p {
+  font-size: 0.95rem;
+  opacity: 0.88;
+  max-width: 540px;
+  margin: 0 auto;
+  line-height: 1.75;
+}
+
+/* ---- Layout ---- */
+main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2.5rem 1.2rem 4rem;
+}
+.section + .section { margin-top: 3rem; }
+.section-title {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--primary-dark);
+  margin-bottom: 1.2rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--accent-bg);
+  position: relative;
+}
+.section-title::after {
+  content: "";
+  position: absolute;
+  bottom: -2px; left: 0;
+  width: 48px; height: 2px;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+}
+
+/* ---- Netcash card ---- */
+.netcash-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.netcash-card:hover {
+  border-color: var(--primary);
+  box-shadow: 0 6px 24px rgba(99, 102, 241, 0.14);
+  transform: translateY(-2px);
+}
+.netcash-card-top {
+  height: 5px;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+}
+.netcash-card-body {
+  padding: 1.4rem 1.6rem 1.6rem;
+}
+.netcash-card-body .badge {
+  display: inline-block;
+  background: var(--accent-bg);
+  color: var(--primary-dark);
+  padding: 0.2rem 0.7rem;
+  border-radius: 20px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  margin-bottom: 0.7rem;
+}
+.netcash-card-body h2 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--primary-dark);
+}
+.netcash-card-body > p {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  margin-bottom: 1.2rem;
+  line-height: 1.65;
+}
+.netcash-links {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+.netcash-links a {
+  display: inline-block;
+  font-size: 0.8rem;
+  color: var(--primary);
+  text-decoration: none;
+  padding: 0.3rem 0.85rem;
+  border: 1px solid var(--primary);
+  border-radius: 20px;
+  transition: all 0.15s;
+}
+.netcash-links a:hover {
+  background: var(--primary);
+  color: white;
+}
+.netcash-links .primary-link {
+  background: var(--primary);
+  color: white;
+  font-weight: 600;
+}
+.netcash-links .primary-link:hover {
+  background: var(--primary-dark);
+  border-color: var(--primary-dark);
+}
+
+/* ---- Articles grid ---- */
+.articles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1rem;
+}
+.article-card {
+  display: block;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.1rem 1.3rem;
+  text-decoration: none;
+  color: var(--text);
+  transition: all 0.2s;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+.article-card:hover {
+  border-color: var(--primary);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.1);
+}
+.article-card .tag {
+  display: inline-block;
+  background: var(--accent-bg);
+  color: var(--primary-dark);
+  padding: 0.15rem 0.5rem;
+  border-radius: 10px;
+  font-size: 0.68rem;
+  font-weight: 600;
+  margin-bottom: 0.55rem;
+  margin-right: 0.3rem;
+}
+.article-card h3 {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--primary-dark);
+  margin-bottom: 0.4rem;
+  line-height: 1.5;
+}
+.article-card p {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+}
+.articles-all-link {
+  display: inline-block;
+  margin-top: 1.1rem;
+  font-size: 0.85rem;
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 600;
+}
+.articles-all-link:hover { text-decoration: underline; }
+
+/* ---- Footer ---- */
+footer {
+  background: white;
+  border-top: 1px solid var(--border);
+  padding: 2rem 1.5rem;
+  text-align: center;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+footer .footer-links { margin-bottom: 0.6rem; }
+footer a { color: var(--primary); text-decoration: none; margin: 0 0.5rem; }
+footer a:hover { text-decoration: underline; }
+
+/* ---- Mobile ---- */
+@media (max-width: 480px) {
+  .hero { padding: 2.5rem 1.2rem 2rem; }
+  main { padding: 2rem 1rem 3rem; }
+  .netcash-card-body { padding: 1.1rem 1.2rem 1.4rem; }
+  .netcash-links { gap: 0.5rem; }
+  .articles-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a class="header-logo" href="https://kabu.tokyo-jp.org/">📊 kabu.tokyo-jp.org</a>
+    <nav class="header-nav">
+      <a href="https://kabu.tokyo-jp.org/netcash/">ランキング</a>
+      <a href="https://kabu.tokyo-jp.org/articles/">コラム</a>
+      <a href="https://tokyo-jp.org/" target="_blank" rel="noopener">tokyo-jp.org ↗</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero">
+  <h1>割安株スクリーナー<br>&amp; バリュー投資コラム</h1>
+  <p>ネットキャッシュ比率（清原達郎式）による東証割安株スクリーニングと、バリュー投資の基礎から実践まで解説する学習コラムを提供しています。</p>
+</div>
+
+<main>
+
+  <!-- Netcash Screener -->
+  <section class="section" aria-label="ネットキャッシュ比率スクリーナー">
+    <h2 class="section-title">📊 ネットキャッシュ比率スクリーナー</h2>
+    <div class="netcash-card">
+      <div class="netcash-card-top"></div>
+      <div class="netcash-card-body">
+        <div class="badge">毎週金曜更新</div>
+        <h2>ネットキャッシュ比率ランキング</h2>
+        <p>清原達郎氏の著書で話題のNC比率を使い、東証上場の割安株を自動スクリーニング。NC比率・PBR・PER・ROE・時価総額など主要指標を一覧で比較できます。セクター・市場フィルターやCSVエクスポートにも対応。</p>
+        <div class="netcash-links">
+          <a class="primary-link" href="https://kabu.tokyo-jp.org/netcash/">ランキングを見る →</a>
+          <a href="https://kabu.tokyo-jp.org/netcash/guide">使い方ガイド</a>
+          <a href="https://kabu.tokyo-jp.org/netcash/privacy">プライバシーポリシー</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Articles -->
+  <section class="section" aria-label="学習コラム">
+    <h2 class="section-title">📖 学習コラム</h2>
+    <div class="articles-grid">
+
+      <a class="article-card" href="https://kabu.tokyo-jp.org/articles/kiyohara-method.html">
+        <div>
+          <span class="tag">投資手法</span>
+          <span class="tag">日本株</span>
+        </div>
+        <h3>清原達郎式「ネットキャッシュ比率」──なぜPBRより実戦的なのか</h3>
+        <p>NC比率の定義・計算方法・PBRとの違い・小型株に絞る理由を解説。</p>
+      </a>
+
+      <a class="article-card" href="https://kabu.tokyo-jp.org/articles/benjamin-graham.html">
+        <div>
+          <span class="tag">バリュー投資</span>
+          <span class="tag">投資哲学</span>
+        </div>
+        <h3>バリュー投資の父・ベンジャミン・グレアム──「安全マージン」の思想</h3>
+        <p>安全マージン・ミスター・マーケット・Net-Net株の3概念を生涯とともに解説。</p>
+      </a>
+
+      <a class="article-card" href="https://kabu.tokyo-jp.org/articles/value-trap.html">
+        <div>
+          <span class="tag">リスク管理</span>
+        </div>
+        <h3>バリュートラップを見抜く──「割安の罠」を避ける7つのチェックポイント</h3>
+        <p>NC比率が高くても株価が上がらない罠を回避する具体的な判断基準を紹介。</p>
+      </a>
+
+      <a class="article-card" href="https://kabu.tokyo-jp.org/articles/value-indicators.html">
+        <div>
+          <span class="tag">指標解説</span>
+          <span class="tag">財務分析</span>
+        </div>
+        <h3>PER・PBR・ROEだけでは足りない──割安株判定で見るべき指標と落とし穴</h3>
+        <p>主要バリュー指標の使い方・限界・組み合わせの実務フレームを解説。</p>
+      </a>
+
+      <a class="article-card" href="https://kabu.tokyo-jp.org/articles/value-vs-growth.html">
+        <div>
+          <span class="tag">バリュー株</span>
+          <span class="tag">グロース株</span>
+        </div>
+        <h3>バリュー株とグロース株はどちらが有利か？</h3>
+        <p>両者のリターンの源泉の違いと、金利・景気サイクルを踏まえた使い分けを解説。</p>
+      </a>
+
+    </div>
+    <a class="articles-all-link" href="https://kabu.tokyo-jp.org/articles/">コラム一覧をすべて見る →</a>
+  </section>
+
+</main>
+
+<footer>
+  <div class="footer-links">
+    <a href="https://kabu.tokyo-jp.org/netcash/">📊 ランキング</a>
+    <a href="https://kabu.tokyo-jp.org/articles/">📖 コラム</a>
+    <a href="https://kabu.tokyo-jp.org/netcash/guide/">使い方ガイド</a>
+    <a href="https://kabu.tokyo-jp.org/netcash/privacy/">プライバシーポリシー</a>
+    <a href="https://tokyo-jp.org/" target="_blank" rel="noopener">tokyo-jp.org ↗</a>
+  </div>
+  <p>© 2026 kabu.tokyo-jp.org</p>
+</footer>
+
+</body>
+</html>
