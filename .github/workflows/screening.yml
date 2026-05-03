@@ -1,0 +1,75 @@
+name: Stock Screening Update
+
+on:
+  schedule:
+    - cron: "0 9 * * 5"   # Every Friday at 09:00 UTC = 18:00 JST
+  workflow_dispatch:
+    inputs:
+      fetch_limit:
+        description: "Max companies to fetch from EDINET (0 = all, use 30 for quick tests)"
+        required: false
+        default: "0"
+      clear_cache:
+        description: "Clear EDINET cache before running (use after code changes that affect doc selection)"
+        required: false
+        default: "false"
+        type: choice
+        options:
+          - "false"
+          - "true"
+
+permissions:
+  contents: write           # Required to commit and push results.json
+
+jobs:
+  screen:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90     # EDINET XBRL downloads can be slow on cold start
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          # No ref: uses the branch/tag that triggered the workflow.
+          # After merging to master the cron will run on master automatically.
+
+      - name: Clear EDINET cache
+        if: ${{ github.event.inputs.clear_cache == 'true' }}
+        run: |
+          rm -f data/edinet_cache.json data/edinet_map_cache.json
+          echo "EDINET cache cleared"
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+          cache-dependency-path: scripts/requirements.txt
+
+      - name: Install dependencies
+        run: pip install -r scripts/requirements.txt
+
+      - name: Run screening
+        env:
+          EDINET_API_KEY: ${{ secrets.EDINET_API_KEY }}
+          EDINET_FETCH_LIMIT: ${{ github.event.inputs.fetch_limit || '0' }}
+        run: |
+          mkdir -p data/logs
+          LOG_FILE="data/logs/run_$(TZ=Asia/Tokyo date +%Y%m%d_%H%M%S).log"
+          python scripts/main.py 2>&1 | tee "$LOG_FILE"
+          # Rotate: keep only the 20 most recent log files
+          ls -t data/logs/run_*.log 2>/dev/null | tail -n +21 | xargs rm -f 2>/dev/null || true
+
+      - name: Commit and push results
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/results.json data/edinet_cache.json data/edinet_map_cache.json data/jpx_diagnostic.txt data/logs/
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            NOW=$(TZ=Asia/Tokyo date "+%Y-%m-%d %H:%M")
+            git commit -m "データ: スクリーニング更新 ${NOW} JST"
+            git push
+          fi
