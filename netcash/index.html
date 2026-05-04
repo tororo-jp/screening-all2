@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ネットキャッシュ比率ランキング | 割安株・バリュー株スクリーナー【清原達郎式】</title>
+<meta name="description" content="清原達郎氏の著書で話題のネットキャッシュ比率を使った割安株スクリーニングツール。東証上場のバリュー株を自動スクリーニングしランキング表示。NC比率・PBR・PER・ROEなど主要指標を一覧で比較。毎週金曜日更新。">
+<meta name="keywords" content="ネットキャッシュ比率,割安株,バリュー株,スクリーニング,清原達郎,スクリーナー,東証,小型株,PBR,PER,ROE,バリュートラップ,株式投資,割安銘柄">
+<link rel="canonical" href="https://kabu.tokyo-jp.org/netcash/">
+<link rel="sitemap" type="application/xml" href="/netcash/sitemap.xml">
+<meta property="og:type"        content="website">
+<meta property="og:url"         content="https://kabu.tokyo-jp.org/netcash/">
+<meta property="og:site_name"   content="ネットキャッシュ比率スクリーナー">
+<meta property="og:title"       content="ネットキャッシュ比率ランキング | 割安株・バリュー株スクリーナー【清原達郎式】">
+<meta property="og:description" content="清原達郎氏の著書で話題のネットキャッシュ比率を使った割安株スクリーニングツール。東証上場のバリュー株を自動スクリーニング。NC比率・PBR・PER・ROEなど主要指標を一覧で比較。毎週金曜日更新。">
+<meta property="og:image"         content="https://kabu.tokyo-jp.org/netcash/ogp.png">
+<meta name="twitter:card"        content="summary_large_image">
+<meta name="twitter:title"       content="ネットキャッシュ比率ランキング | 割安株・バリュー株スクリーナー【清原達郎式】">
+<meta name="twitter:description" content="清原達郎氏の著書で話題のネットキャッシュ比率を使った割安株スクリーニングツール。東証上場のバリュー株を自動スクリーニング。毎週金曜日更新。">
+<meta name="twitter:image"       content="https://kabu.tokyo-jp.org/netcash/ogp.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lightweight-charts@4.2.0/dist/lightweight-charts.standalone.production.js" defer></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3689763245760846" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "name": "ネットキャッシュ比率スクリーナー",
+      "url": "https://kabu.tokyo-jp.org/netcash/",
+      "description": "清原達郎氏の著書で話題のネットキャッシュ比率（NC比率）を使った割安株・バリュー株スクリーニングツール。東証上場株から現金豊富な割安銘柄を自動スクリーニング。"
+    },
+    {
+      "@type": "WebApplication",
+      "name": "ネットキャッシュ比率スクリーナー",
+      "url": "https://kabu.tokyo-jp.org/netcash/",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Web",
+      "description": "清原達郎氏の著書で話題のネットキャッシュ比率を使った割安株・バリュー株スクリーニングツール。東証上場の小型株からNC比率・PBR・PER・ROEなどを基にバリュー株を自動でスクリーニングし毎週金曜日更新。",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "JPY" },
+      "featureList": ["ネットキャッシュ比率ランキング", "割安株スクリーニング", "バリュートラップ検出", "セクター・市場フィルター", "CSVエクスポート"]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "kabu.tokyo-jp.org",
+          "item": "https://kabu.tokyo-jp.org/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "ネットキャッシュ比率スクリーナー",
+          "item": "https://kabu.tokyo-jp.org/netcash/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+<style>
+:root{
+  --bg:#f5f7fa;--bg2:#ffffff;--bg3:#f0f2f6;--bg4:#e8ecf2;
+  --border:#d4dae6;--border2:#b8c2d4;
+  --accent:#0068d6;--accent-light:#e8f0fd;
+  --accent2:#d94f00;--accent2-light:#fdeee8;
+  --accent3:#006e3c;--accent3-light:#e6f4ed;
+  --gold:#b8860b;--gold-bg:#fff8e6;
+  --silver:#5a6a7e;--silver-bg:#f2f4f7;
+  --bronze:#8b5a2b;--bronze-bg:#fdf2e9;
+  --text:#1a2333;--text2:#3d5068;--text3:#6b7f96;
+  --up:#006e3c;--up-bg:#e6f4ed;
+  --down:#c0392b;--down-bg:#fdecea;
+  --warn:#b45309;--warn-bg:#fef3e2;
+  --trap:#c0392b;--trap-bg:#fdecea;
+  --shadow:0 1px 3px rgba(0,0,0,.08),0 4px 12px rgba(0,0,0,.06);
+  --shadow-sm:0 1px 2px rgba(0,0,0,.06);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'Noto Sans JP',sans-serif;min-height:100vh;overflow-x:hidden;line-height:1.5}
+
+/* HEADER */
+header{background:linear-gradient(135deg,#6366f1 0%,#8b5cf6 100%);border-bottom:none;position:sticky;top:0;z-index:200;padding:10px 0;box-shadow:0 2px 12px rgba(99,102,241,.25)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px}
+.site-logo{font-size:10px;font-weight:700;color:rgba(255,255,255,.85);text-decoration:none;letter-spacing:.04em;display:block;margin-bottom:3px;transition:color .15s}
+.site-logo:hover{color:white}
+h1{font-size:clamp(15px,3.2vw,20px);font-weight:900;letter-spacing:-.01em;line-height:1.2;color:white}
+h1 em{font-style:normal;color:rgba(255,255,255,.8)}
+.header-right{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.live-badge{display:flex;align-items:center;gap:5px;font-family:'JetBrains Mono',monospace;font-size:10px;color:rgba(255,255,255,.9);background:rgba(255,255,255,.12);padding:4px 10px;border-radius:20px;border:1px solid rgba(255,255,255,.3)}
+.title-update{font-size:10px;color:rgba(255,255,255,.7);margin-top:3px;font-weight:600;letter-spacing:.03em}
+.live-dot{width:6px;height:6px;border-radius:50%;background:#22c55e;animation:blink 2s ease-in-out infinite;flex-shrink:0}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.35}}
+.nav-link{display:inline-flex;align-items:center;gap:4px;padding:5px 10px;background:rgba(255,255,255,.15);border-radius:20px;border:1px solid rgba(255,255,255,.35);font-size:11px;color:rgba(255,255,255,.9);text-decoration:none;font-weight:600;transition:all .15s;white-space:nowrap}
+.nav-link:hover{background:rgba(255,255,255,.25);border-color:rgba(255,255,255,.7);color:white}
+
+.container{max-width:1320px;margin:0 auto;padding:0 14px}
+
+/* STATS */
+.stats-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:16px 0}
+@media(min-width:640px){.stats-grid{grid-template-columns:repeat(4,1fr)}}
+.stat-card{background:#fff;border:1px solid var(--border);border-radius:10px;padding:14px 18px;text-align:center;box-shadow:var(--shadow-sm);border-top:3px solid var(--accent)}
+.stat-lbl{font-size:10px;letter-spacing:.06em;color:var(--text3);display:flex;align-items:center;justify-content:center;gap:4px;margin-bottom:5px;font-weight:500}
+.stat-val{font-family:'JetBrains Mono',monospace;font-size:22px;font-weight:700;color:var(--accent)}
+.stat-val.g{color:var(--up)}.stat-val.o{color:var(--accent2)}
+.stat-diff{font-family:'JetBrains Mono',monospace;font-size:10px;margin-top:3px;min-height:14px}
+.stat-diff.up{color:var(--up)}.stat-diff.dn{color:var(--down)}.stat-diff.eq{color:var(--text3)}
+
+/* HELP BTN */
+.hbtn{display:inline-flex;align-items:center;justify-content:center;width:15px;height:15px;border-radius:50%;background:var(--bg3);border:1px solid var(--border2);color:var(--text3);font-size:9px;font-weight:700;cursor:pointer;flex-shrink:0;transition:all .12s;font-family:'JetBrains Mono',monospace;line-height:1;vertical-align:middle}
+.hbtn:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-light)}
+
+/* FILTER */
+.filter-panel{background:#fff;border:1px solid var(--border);border-radius:10px;padding:16px;margin-bottom:14px;box-shadow:var(--shadow-sm)}
+.filter-panel-title{font-size:12px;font-weight:700;color:var(--text);margin-bottom:12px;display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.recommended-badge{display:inline-flex;align-items:center;gap:5px;padding:3px 10px;background:var(--accent-light);border:1px solid var(--accent);border-radius:20px;font-size:10px;color:var(--accent);font-weight:700}
+.filter-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px 14px}
+@media(min-width:640px){.filter-grid{grid-template-columns:repeat(3,1fr)}}
+@media(min-width:960px){.filter-grid{grid-template-columns:repeat(5,1fr)}}
+.filter-item-lbl{font-size:10px;color:var(--text2);font-weight:600;margin-bottom:4px;display:flex;align-items:center;gap:4px}
+.range-row{display:flex;align-items:center;gap:4px;min-width:0}
+.range-inp{background:#fff;border:1.5px solid var(--border2);color:var(--text);padding:6px 8px;border-radius:6px;font-size:12px;font-family:'JetBrains Mono',monospace;width:0;flex:1 1 0;min-width:0;transition:border-color .15s;outline:none}
+.range-inp:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(0,104,214,.12)}
+.range-inp::placeholder{color:var(--text3);font-size:10px}
+.range-sep{font-size:11px;color:var(--text3);flex-shrink:0}
+.filter-item.full{grid-column:1/-1}
+.filter-mkt{display:flex;gap:6px;flex-wrap:wrap;margin-top:4px}
+.mkt-btn{background:#fff;border:1.5px solid var(--border2);color:var(--text2);padding:5px 12px;border-radius:6px;font-size:11px;cursor:pointer;font-weight:600;font-family:'Noto Sans JP',sans-serif;transition:all .15s;white-space:nowrap}
+.mkt-btn:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-light)}
+.mkt-btn.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.check-row{display:flex;flex-wrap:wrap;gap:16px;align-items:flex-start}
+.vt-label{display:flex;align-items:center;gap:6px;cursor:pointer;font-size:11px;color:var(--text2);font-weight:500;margin-top:4px}
+.vt-label input[type=checkbox]{accent-color:var(--accent);width:14px;height:14px;cursor:pointer}
+.filter-actions{display:flex;gap:8px;margin-top:14px;align-items:center;flex-wrap:wrap}
+.btn-apply{background:var(--accent);color:#fff;padding:7px 20px;border:none;border-radius:6px;font-size:12px;font-weight:700;cursor:pointer;font-family:'Noto Sans JP',sans-serif;transition:all .15s}
+.btn-apply:hover{background:#0054b0}
+.btn-recommended{background:#fff;border:2px solid var(--accent);color:var(--accent);padding:6px 14px;border-radius:6px;font-size:12px;font-weight:700;cursor:pointer;font-family:'Noto Sans JP',sans-serif;transition:all .15s;white-space:nowrap}
+.btn-recommended:hover{background:var(--accent-light)}
+.btn-reset{background:#fff;border:1.5px solid var(--border2);color:var(--text2);padding:7px 14px;border-radius:6px;font-size:12px;cursor:pointer;font-weight:600;font-family:'Noto Sans JP',sans-serif;transition:all .15s}
+.btn-reset:hover{border-color:var(--text);color:var(--text)}
+.filter-rc{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--text3);margin-left:auto;font-weight:600}
+
+/* TABLE */
+.table-wrap{background:#fff;overflow-x:auto;border-radius:10px;border:1px solid var(--border);box-shadow:var(--shadow);-webkit-overflow-scrolling:touch}
+table{width:100%;border-collapse:collapse;font-size:13px;min-width:960px}
+thead th{background:var(--bg3);padding:10px 12px;text-align:left;font-size:10px;font-weight:700;letter-spacing:.06em;color:var(--text2);white-space:nowrap;border-bottom:2px solid var(--border);user-select:none}
+.thi{display:flex;align-items:center;gap:3px}.thi.r{justify-content:flex-end}
+thead th.srt{cursor:pointer}
+thead th.srt:hover{background:var(--bg4)}
+thead th.srt:hover .th-lbl{color:var(--accent)}
+thead th.srt.on{background:var(--accent-light)}
+thead th.srt.on .th-lbl{color:var(--accent)}
+thead th.srt.on .si{color:var(--accent)}
+.si{font-size:10px;color:var(--text3);font-family:'JetBrains Mono',monospace;min-width:10px}
+tbody tr{border-bottom:1px solid var(--border);cursor:pointer;transition:background .1s}
+tbody tr:last-child{border-bottom:none}
+tbody tr:hover{background:#f0f5ff}
+tbody tr.top3{background:var(--gold-bg)}
+tbody tr.top3:hover{background:#fff3cc}
+tbody tr.vtrap{border-left:3px solid var(--down)}
+td{padding:12px 12px;white-space:nowrap;vertical-align:middle}
+.rank-cell{display:flex;align-items:center;gap:6px}
+.medal{width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:900;flex-shrink:0;font-family:'JetBrains Mono',monospace}
+.medal.G{background:var(--gold-bg);color:var(--gold);border:2px solid #d4a500}
+.medal.S{background:var(--silver-bg);color:var(--silver);border:2px solid #8899aa}
+.medal.B{background:var(--bronze-bg);color:var(--bronze);border:2px solid #a0714a}
+.medal.N{background:var(--bg3);color:var(--text3);border:1px solid var(--border);font-size:10px}
+.rch{font-size:10px;font-family:'JetBrains Mono',monospace;font-weight:700}
+.rch.u{color:var(--up)}.rch.d{color:var(--down)}.rch.e{color:var(--text3)}
+.wch{font-size:9px;font-family:'JetBrains Mono',monospace;font-weight:700;display:block;margin-top:1px;opacity:.8}
+.wch.u{color:var(--up)}.wch.d{color:var(--down)}.wch.e{color:var(--text3)}
+.star-btn{background:none;border:none;cursor:pointer;font-size:14px;padding:2px 5px;line-height:1;color:var(--text3);transition:transform .1s;flex-shrink:0}
+.star-btn:hover{transform:scale(1.3)}
+.star-btn.on{color:#f5a623}
+.stock-cell{min-width:130px}
+.tc{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;color:var(--text3);letter-spacing:.06em;margin-bottom:2px}
+.tn{font-size:14px;font-weight:700;color:var(--text);line-height:1.3;max-width:150px;white-space:normal;word-break:break-all}
+.sec-badge{display:inline-block;padding:2px 7px;border-radius:4px;font-size:10px;font-weight:600;background:var(--bg3);border:1px solid var(--border);color:var(--text2);max-width:88px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.mkt-badge{display:inline-block;padding:3px 7px;border-radius:4px;font-size:10px;font-weight:700}
+.mkt-badge.gr{background:var(--accent3-light);color:var(--accent3);border:1px solid #86d4ad}
+.mkt-badge.st{background:var(--accent-light);color:var(--accent);border:1px solid #93bbf5}
+.mkt-badge.pr{background:var(--accent2-light);color:var(--accent2);border:1px solid #f5a880}
+.trap-badge{display:inline-flex;align-items:center;gap:2px;padding:2px 7px;border-radius:4px;font-size:10px;font-weight:700;font-family:'JetBrains Mono',monospace;background:var(--trap-bg);color:var(--trap);border:1px solid #f5a9a5}
+.num{font-family:'JetBrains Mono',monospace;text-align:right;font-size:13px;font-weight:600}
+.num.hi{color:var(--up);font-weight:700}.num.mid{color:var(--warn);font-weight:700}.num.red{color:var(--down);font-weight:700}
+.sc-wrap{display:flex;align-items:center;gap:7px;justify-content:flex-end}
+.sc-bar{width:44px;height:5px;background:var(--bg4);border-radius:3px;overflow:hidden;flex-shrink:0}
+.sc-fill{height:100%;border-radius:3px;background:linear-gradient(90deg,var(--accent),var(--up))}
+.sc-num{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:var(--text);min-width:24px;text-align:right}
+.sp-badge{display:inline-flex;align-items:center;gap:2px;padding:3px 7px;border-radius:4px;font-size:10px;font-weight:700;font-family:'JetBrains Mono',monospace}
+.sp-badge.pos{background:var(--up-bg);color:var(--up);border:1px solid #86d4ad}
+.sp-badge.neg{background:var(--down-bg);color:var(--down);border:1px solid #f5a9a5}
+.sp-badge.non{color:var(--text3);background:var(--bg3);border:1px solid var(--border)}
+.metric-pair{display:flex;flex-direction:column;gap:2px;text-align:right}
+.metric-pair .m1{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:600}
+.metric-pair .m2{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--text3)}
+.spinner{width:32px;height:32px;border:3px solid var(--border);border-top-color:var(--accent);border-radius:50%;animation:spin 0.8s linear infinite;margin:0 auto}
+@keyframes spin{to{transform:rotate(360deg)}}
+.loading-text{font-size:12px;color:var(--text3);margin-top:12px;text-align:center}
+.error-box{background:var(--down-bg);border:1px solid #f5a9a5;border-radius:10px;padding:24px 28px;max-width:480px;margin:40px auto;text-align:center}
+.error-box h3{color:var(--down);margin-bottom:8px;font-size:14px}
+.error-box p{color:var(--text2);font-size:12px;line-height:1.7}
+
+/* HELP MODAL */
+.hov{display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:500;align-items:center;justify-content:center;padding:16px}
+.hov.open{display:flex}
+.hmod{background:#fff;border:1px solid var(--border);border-radius:12px;width:100%;max-width:440px;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,.18);animation:mIn .18s ease}
+@keyframes mIn{from{transform:translateY(10px);opacity:0}to{transform:translateY(0);opacity:1}}
+.hmod-head{padding:14px 18px 12px;border-bottom:1px solid var(--border);background:var(--accent-light);display:flex;justify-content:space-between;align-items:center}
+.hmod-title{font-size:13px;font-weight:700;color:var(--accent)}
+.hmod-body{padding:16px 18px;font-size:12px;line-height:1.85;color:var(--text2);max-height:70vh;overflow-y:auto}
+.hmod-body strong{color:var(--text);font-weight:700}
+.formula{background:var(--bg3);border:1px solid var(--border);border-radius:6px;padding:10px 12px;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--accent);margin:8px 0;line-height:1.7}
+.tip{border-left:3px solid var(--accent);padding:8px 10px;margin-top:8px;color:var(--text2);font-size:11px;background:var(--accent-light);border-radius:0 6px 6px 0}
+.warn-block{background:var(--warn-bg);border:1px solid #f5c47a;border-radius:6px;padding:8px 12px;margin:8px 0;font-size:11px;color:var(--warn);font-weight:600}
+.xbtn{background:#fff;border:1.5px solid var(--border);color:var(--text2);width:26px;height:26px;border-radius:6px;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:14px;transition:all .12s;flex-shrink:0}
+.xbtn:hover{border-color:var(--down);color:var(--down)}
+
+/* DETAIL MODAL */
+.dov{display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:300;align-items:center;justify-content:center;padding:12px}
+.dov.open{display:flex}
+.dmod{background:#fff;border:1px solid var(--border);border-radius:12px;width:100%;max-width:640px;max-height:92vh;overflow-y:auto;box-shadow:0 8px 32px rgba(0,0,0,.18);animation:mIn .2s ease}
+.dmod-head{padding:18px 20px 14px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:flex-start;gap:10px;background:var(--bg3)}
+.dmod-ticker{font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--text3);margin-bottom:3px}
+.dmod-name{font-size:20px;font-weight:900;color:var(--text);line-height:1.2}
+.dmod-sub{font-size:11px;color:var(--text2);margin-top:5px;display:flex;gap:7px;align-items:center;flex-wrap:wrap}
+.dmod-body{padding:16px 20px}
+.dmod-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:8px;overflow:hidden;margin-bottom:14px}
+@media(max-width:400px){.dmod-grid{grid-template-columns:repeat(2,1fr)}}
+.dmod-stat{background:#fff;padding:12px 14px}.dmod-stat:hover{background:var(--bg3)}
+.dmod-stat-lbl{font-size:10px;color:var(--text3);font-weight:600;margin-bottom:4px;display:flex;align-items:center;gap:4px}
+.dmod-stat-val{font-family:'JetBrains Mono',monospace;font-size:16px;font-weight:700;color:var(--text)}
+.dv-accent{color:var(--accent)}.dv-green{color:var(--up)}.dv-orange{color:var(--accent2)}.dv-red{color:var(--down)}
+.trap-section{background:var(--trap-bg);border:1px solid #f5a9a5;border-radius:8px;padding:12px 14px;margin-bottom:12px}
+.trap-section-title{font-size:11px;font-weight:700;color:var(--trap);margin-bottom:8px;display:flex;align-items:center;gap:5px}
+.trap-items{display:flex;flex-direction:column;gap:6px}
+.trap-item{display:flex;align-items:flex-start;gap:7px;font-size:11px;color:var(--text2)}
+.ti-icon{flex-shrink:0;width:16px;height:16px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700}
+.ti-icon.bad{background:var(--down-bg);color:var(--down)}.ti-icon.ok{background:var(--up-bg);color:var(--up)}
+.dmod-note{font-size:11px;color:var(--text2);line-height:1.75;padding:12px;background:var(--accent-light);border-radius:8px;border-left:3px solid var(--accent);margin-bottom:12px}
+.dmod-badges{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px}
+.info-badge{font-size:10px;padding:3px 8px;border-radius:20px;font-weight:700}
+.info-badge.good{background:rgba(0,224,128,.12);color:var(--up);border:1px solid rgba(0,224,128,.3)}
+.sector-tags{display:flex;flex-wrap:wrap;gap:4px;margin-top:5px}
+.sector-tag{font-size:10px;padding:3px 8px;border-radius:20px;border:1px solid var(--border2);color:var(--text2);cursor:pointer;background:var(--bg2);transition:all .15s}
+.sector-tag:hover{border-color:var(--accent);color:var(--accent)}
+.sector-tag.on{background:var(--accent);color:#fff;border-color:var(--accent)}
+.dmod-links{display:flex;gap:7px;flex-wrap:wrap}
+.chart-wrap{margin-bottom:14px;border-radius:8px;overflow:hidden;border:1px solid var(--border);background:var(--bg3);height:210px;position:relative}
+.chart-msg{display:flex;align-items:center;justify-content:center;height:100%;flex-direction:column;gap:7px;color:var(--text3);font-size:11px}
+.dmod-link{display:inline-flex;align-items:center;gap:4px;padding:6px 12px;background:var(--bg3);border:1px solid var(--border);border-radius:6px;font-size:11px;color:var(--text2);text-decoration:none;font-weight:600;transition:all .15s}
+.dmod-link:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-light)}
+
+.ad-slot{background:#fff;border:1.5px dashed var(--border2);border-radius:8px;padding:18px;text-align:center;color:var(--text3);font-size:11px;margin:14px 0}
+.share-bar{border-top:1px solid var(--border);background:var(--bg3);padding:12px 0;margin-top:8px}
+.share-bar-inner{max-width:1100px;margin:0 auto;padding:0 16px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.share-lbl{font-size:10px;color:var(--text3);font-weight:700;white-space:nowrap;margin-right:4px}
+.share-btn{display:inline-flex;align-items:center;gap:4px;padding:5px 12px;border-radius:20px;font-size:11px;font-weight:700;text-decoration:none;border:none;cursor:pointer;transition:opacity .15s;white-space:nowrap}
+.share-btn:hover{opacity:.78}
+.share-btn.x{background:#000;color:#fff}
+.share-btn.line{background:#06C755;color:#fff}
+.share-btn.copy{background:var(--bg4);color:var(--text2);border:1px solid var(--border2)}
+.share-btn.feedback{background:var(--accent);color:#fff;margin-left:auto}
+.footer-links{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin-bottom:8px}
+.footer-link{color:var(--text3);text-decoration:none;font-size:11px;transition:color .12s}
+.footer-link:hover{color:#6366f1}
+footer{border-top:1px solid var(--border);padding:24px 0;margin-top:0;text-align:center;font-size:11px;color:var(--text3);line-height:1.9;background:#fff}
+
+@media(max-width:480px){
+  .header-right{gap:6px}.live-badge{display:none}
+  .stats-grid{grid-template-columns:repeat(2,1fr)}.stat-val{font-size:18px}
+  td{padding:10px 8px}.tn{font-size:13px}
+}
+.breadcrumb{font-size:11px;color:var(--text3);padding:8px 0 0;line-height:1.4}
+.breadcrumb a{color:var(--accent);text-decoration:none}
+.breadcrumb a:hover{text-decoration:underline}
+.breadcrumb span{margin:0 4px;opacity:.5}
+</style>
+</head>
+<body>
+
+<header>
+<div class="container header-inner">
+  <div>
+    <a class="site-logo" href="https://kabu.tokyo-jp.org/">📊 kabu.tokyo-jp.org</a>
+    <h1>ネットキャッシュ<em>比率</em>ランキング</h1>
+    <div class="title-update" id="lastUpdate-sub">データ更新: —</div>
+  </div>
+  <div class="header-right">
+    <div class="live-badge"><span class="live-dot"></span>最終更新: <span id="lastUpdate" style="margin-left:3px;font-weight:700">--</span></div>
+    <a href="/articles/" class="nav-link">📖 コラム</a>
+    <a href="/netcash/guide/" class="nav-link">使い方</a>
+  </div>
+</div>
+</header>
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="パンくずリスト">
+    <a href="https://kabu.tokyo-jp.org/">ホーム</a>
+    <span>›</span>
+    <span>ネットキャッシュ比率スクリーナー</span>
+  </nav>
+</div>
+
+<div class="container" style="position:relative;z-index:1">
+
+<div class="stats-grid">
+  <div class="stat-card">
+    <div class="stat-lbl">対象銘柄数 <span class="hbtn" onclick="sh('screened')">?</span></div>
+    <div class="stat-val" id="st-total">--</div>
+    <div class="stat-diff"></div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-lbl">第一条件通過 <span class="hbtn" onclick="sh('passed1')">?</span></div>
+    <div class="stat-val g" id="st-pass">--</div>
+    <div class="stat-diff" id="df-pass"></div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-lbl">第二条件通過 <span class="hbtn" onclick="sh('passed2')">?</span></div>
+    <div class="stat-val" id="st-pass2">--</div>
+    <div class="stat-diff" style="font-size:9px;color:var(--text3)" id="df-pass2">フィルター適用後</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-lbl">サプライズ <span class="hbtn" onclick="sh('surprise_stat')">?</span></div>
+    <div class="stat-val o" id="st-surp">--</div>
+    <div class="stat-diff" id="df-surp"></div>
+  </div>
+</div>
+
+<div class="ad-slot" style="padding:0;overflow:hidden">
+  <a href="https://amzn.to/48XKSwf" target="_blank" rel="noopener sponsored" style="display:flex;align-items:center;justify-content:center;gap:12px;padding:14px 20px;text-decoration:none;color:inherit;background:#fffbf5;border-radius:8px">
+    <div style="background:#FF9900;color:#232F3E;font-weight:900;font-size:11px;padding:3px 9px;border-radius:3px;letter-spacing:.04em;flex-shrink:0">amazon</div>
+    <div style="text-align:left;flex:1;min-width:0">
+      <div style="font-size:12px;font-weight:700;color:var(--text)">Amazonおすすめ商品を見る</div>
+      <div style="font-size:10px;color:var(--text3);margin-top:1px">Amazonのアソシエイトとして、当サイトは適格販売により収入を得ています。</div>
+    </div>
+    <div style="color:#FF9900;font-weight:900;font-size:16px;flex-shrink:0">›</div>
+  </a>
+</div>
+
+<div class="filter-panel">
+  <div class="filter-panel-title">
+    🔍 スクリーニングフィルター
+    <span class="hbtn" onclick="sh('filters')">?</span>
+    <span class="recommended-badge" id="rec-badge" style="display:none">⭐ 推奨条件適用中</span>
+  </div>
+  <div class="filter-grid">
+    <div class="filter-item">
+      <div class="filter-item-lbl">NC比率 <span class="hbtn" onclick="sh('ncr')">?</span></div>
+      <div class="range-row">
+        <input class="range-inp" id="f-ncr-min" type="number" step="0.1" min="0" placeholder="下限">
+        <span class="range-sep">〜</span>
+        <input class="range-inp" id="f-ncr-max" type="number" step="0.1" min="0" placeholder="上限">
+      </div>
+    </div>
+    <div class="filter-item">
+      <div class="filter-item-lbl">PBR <span class="hbtn" onclick="sh('pbr')">?</span></div>
+      <div class="range-row">
+        <input class="range-inp" id="f-pbr-min" type="number" step="0.05" min="0" placeholder="下限">
+        <span class="range-sep">〜</span>
+        <input class="range-inp" id="f-pbr-max" type="number" step="0.05" min="0" placeholder="上限">
+      </div>
+    </div>
+    <div class="filter-item">
+      <div class="filter-item-lbl">PER <span class="hbtn" onclick="sh('per')">?</span></div>
+      <div class="range-row">
+        <input class="range-inp" id="f-per-min" type="number" step="1" min="0" placeholder="下限">
+        <span class="range-sep">〜</span>
+        <input class="range-inp" id="f-per-max" type="number" step="1" min="0" placeholder="上限">
+      </div>
+    </div>
+    <div class="filter-item">
+      <div class="filter-item-lbl">時価総額(億) <span class="hbtn" onclick="sh('cap')">?</span></div>
+      <div class="range-row">
+        <input class="range-inp" id="f-cap-min" type="number" step="10" min="0" placeholder="下限">
+        <span class="range-sep">〜</span>
+        <input class="range-inp" id="f-cap-max" type="number" step="10" min="0" placeholder="上限">
+      </div>
+    </div>
+    <div class="filter-item">
+      <div class="filter-item-lbl">ROE(%) <span class="hbtn" onclick="sh('roe')">?</span></div>
+      <div class="range-row">
+        <input class="range-inp" id="f-roe-min" type="number" step="1" placeholder="下限">
+        <span class="range-sep">〜</span>
+        <input class="range-inp" id="f-roe-max" type="number" step="1" placeholder="上限">
+      </div>
+    </div>
+    <div class="filter-item">
+      <div class="filter-item-lbl">配当利回り(%) <span class="hbtn" onclick="sh('div')">?</span></div>
+      <div class="range-row">
+        <input class="range-inp" id="f-div-min" type="number" step="0.5" min="0" placeholder="下限">
+        <span class="range-sep">〜</span>
+        <input class="range-inp" id="f-div-max" type="number" step="0.5" min="0" placeholder="上限">
+      </div>
+    </div>
+    <div class="filter-item">
+      <div class="filter-item-lbl">売上成長率(%) <span class="hbtn" onclick="sh('revenue_growth')">?</span></div>
+      <div class="range-row">
+        <input class="range-inp" id="f-rg-min" type="number" step="1" placeholder="下限">
+        <span class="range-sep">〜</span>
+        <input class="range-inp" id="f-rg-max" type="number" step="1" placeholder="上限">
+      </div>
+    </div>
+    <div class="filter-item full">
+      <div class="filter-item-lbl">市場</div>
+      <div class="filter-mkt">
+        <button class="mkt-btn on" data-mkt="all"         onclick="toggleMkt('all',this)">全市場</button>
+        <button class="mkt-btn"   data-mkt="グロース"     onclick="toggleMkt('グロース',this)">グロース</button>
+        <button class="mkt-btn"   data-mkt="スタンダード" onclick="toggleMkt('スタンダード',this)">スタンダード</button>
+        <button class="mkt-btn"   data-mkt="プライム"     onclick="toggleMkt('プライム',this)">プライム</button>
+      </div>
+    </div>
+    <div class="filter-item full">
+      <div class="check-row">
+        <div>
+          <div class="filter-item-lbl">バリュートラップ <span class="hbtn" onclick="sh('vtrap')">?</span></div>
+          <label class="vt-label"><input type="checkbox" id="f-notrap"> 警告あり銘柄を除外する</label>
+        </div>
+        <div>
+          <div class="filter-item-lbl">赤字企業 <span class="hbtn" onclick="sh('eps')">?</span></div>
+          <label class="vt-label"><input type="checkbox" id="f-profitable"> 黒字企業のみ（EPS &gt; 0）</label>
+        </div>
+        <div>
+          <div class="filter-item-lbl">ウォッチリスト</div>
+          <label class="vt-label"><input type="checkbox" id="f-watch"> ⭐ 登録済みのみ表示</label>
+        </div>
+      </div>
+    </div>
+    <div class="filter-item full">
+      <div class="filter-item-lbl">セクター <span class="hbtn" onclick="sh('sector')">?</span></div>
+      <div class="sector-tags" id="sector-tags"></div>
+    </div>
+  </div>
+  <div class="filter-actions">
+    <button class="btn-apply"       onclick="applyFilters()">適用</button>
+    <button class="btn-recommended" onclick="setRecommended()">⭐ 推奨条件</button>
+    <button class="btn-reset"       onclick="resetFilters()">全解除</button>
+    <button class="btn-reset"       onclick="exportCSV()" style="margin-left:4px">📥 CSV</button>
+    <span class="filter-rc" id="frc"></span>
+  </div>
+</div>
+
+<div class="table-wrap">
+<table>
+<thead>
+<tr>
+  <th style="width:36px;text-align:center"></th>
+  <th style="min-width:72px"><div class="thi">順位</div></th>
+  <th style="min-width:140px"><div class="thi">銘柄</div></th>
+  <th style="min-width:80px"><div class="thi">セクター <span class="hbtn" onclick="sh('sector');event.stopPropagation()">?</span></div></th>
+  <th style="min-width:82px"><div class="thi">市場</div></th>
+  <th class="srt" id="th-price" style="min-width:72px" onclick="sort('price')"><div class="thi r">株価<span class="si" id="si-price">↕</span></div></th>
+  <th class="srt" id="th-market_cap" style="min-width:80px" onclick="sort('market_cap')"><div class="thi r">時価総額(億) <span class="hbtn" onclick="sh('cap');event.stopPropagation()">?</span><span class="si" id="si-market_cap">↕</span></div></th>
+  <th class="srt" id="th-net_cash_ratio" style="min-width:78px" onclick="sort('net_cash_ratio')"><div class="thi r"><span class="hbtn" onclick="sh('ncr');event.stopPropagation()">?</span>&nbsp;NC比率<span class="si" id="si-net_cash_ratio">↕</span></div></th>
+  <th class="srt" id="th-pbr" style="min-width:60px" onclick="sort('pbr')"><div class="thi r"><span class="hbtn" onclick="sh('pbr');event.stopPropagation()">?</span>&nbsp;PBR<span class="si" id="si-pbr">↕</span></div></th>
+  <th class="srt" id="th-per" style="min-width:60px" onclick="sort('per')"><div class="thi r"><span class="hbtn" onclick="sh('per');event.stopPropagation()">?</span>&nbsp;PER<span class="si" id="si-per">↕</span></div></th>
+  <th class="srt" id="th-roe" style="min-width:86px" onclick="sort('roe')"><div class="thi r"><span class="hbtn" onclick="sh('roe');event.stopPropagation()">?</span>&nbsp;ROE/ROA<span class="si" id="si-roe">↕</span></div></th>
+  <th class="srt" id="th-div_yield" style="min-width:80px" onclick="sort('div_yield')"><div class="thi r">配当利回り <span class="hbtn" onclick="sh('div');event.stopPropagation()">?</span><span class="si" id="si-div_yield">↕</span></div></th>
+  <th style="min-width:80px"><div class="thi">サプライズ <span class="hbtn" onclick="sh('surprise_col');event.stopPropagation()">?</span></div></th>
+  <th style="min-width:40px"><div class="thi">VT <span class="hbtn" onclick="sh('vtrap');event.stopPropagation()">?</span></div></th>
+  <th class="srt" id="th-score" style="min-width:94px" onclick="sort('score')"><div class="thi r"><span class="hbtn" onclick="sh('score');event.stopPropagation()">?</span>&nbsp;スコア<span class="si" id="si-score">↕</span></div></th>
+</tr>
+</thead>
+<tbody id="tbody">
+  <tr><td colspan="15" style="padding:50px 0">
+    <div class="spinner"></div>
+    <div class="loading-text">データを読み込み中...</div>
+  </td></tr>
+</tbody>
+</table>
+</div>
+
+<div id="error-msg" style="display:none">
+  <div class="error-box"><h3>⚠ データを読み込めませんでした</h3><p>スクリーニングデータの取得に失敗しました。<br>しばらく時間をおいてからページを再読み込みしてください。</p></div>
+</div>
+
+<div class="ad-slot" style="margin-top:16px">
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-3689763245760846"
+       data-ad-slot="YOUR_SLOT_ID"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
+<div class="ad-slot" style="margin-top:16px;padding:0;overflow:hidden">
+  <a href="https://amzn.to/4twacls" target="_blank" rel="noopener sponsored" style="display:flex;align-items:center;justify-content:center;gap:12px;padding:14px 20px;text-decoration:none;color:inherit;background:#fffbf5;border-radius:8px">
+    <div style="background:#FF9900;color:#232F3E;font-weight:900;font-size:11px;padding:3px 9px;border-radius:3px;letter-spacing:.04em;flex-shrink:0">amazon</div>
+    <div style="text-align:left;flex:1;min-width:0">
+      <div style="font-size:12px;font-weight:700;color:var(--text)">Amazonおすすめ商品を見る</div>
+      <div style="font-size:10px;color:var(--text3);margin-top:1px">Amazonのアソシエイトとして、当サイトは適格販売により収入を得ています。</div>
+    </div>
+    <div style="color:#FF9900;font-weight:900;font-size:16px;flex-shrink:0">›</div>
+  </a>
+</div>
+</div>
+
+<!-- DETAIL MODAL -->
+<div class="dov" id="dov" onclick="closeDOut(event)">
+<div class="dmod">
+  <div class="dmod-head">
+    <div>
+      <div class="dmod-ticker" id="d-ticker"></div>
+      <div class="dmod-name"   id="d-name"></div>
+      <div class="dmod-sub"    id="d-sub"></div>
+    </div>
+    <button class="xbtn" onclick="closeD()">✕</button>
+  </div>
+  <div class="dmod-body">
+    <div class="dmod-grid"  id="d-grid"></div>
+    <div id="d-trap"></div>
+    <div id="d-badges"></div>
+    <div class="dmod-note"  id="d-note"></div>
+    <div id="d-chart" class="chart-wrap"></div>
+    <div class="dmod-links" id="d-links"></div>
+  </div>
+</div>
+</div>
+
+<!-- HELP MODAL -->
+<div class="hov" id="hov" onclick="closeHOut(event)">
+<div class="hmod">
+  <div class="hmod-head"><div class="hmod-title" id="h-title"></div><button class="xbtn" onclick="closeH()">✕</button></div>
+  <div class="hmod-body" id="h-body"></div>
+</div>
+</div>
+
+<div class="share-bar">
+  <div class="share-bar-inner">
+    <span class="share-lbl">シェア</span>
+    <a class="share-btn x" href="https://x.com/intent/tweet?url=https%3A%2F%2Fkabu.tokyo-jp.org%2Fnetcash%2F&text=%E3%83%8D%E3%83%83%E3%83%88%E3%82%AD%E3%83%A3%E3%83%83%E3%82%B7%E3%83%A5%E5%80%8D%E7%8E%87%E3%83%A9%E3%83%B3%E3%82%AD%E3%83%B3%E3%82%B0+%7C+%E5%89%B2%E5%AE%89%E5%B0%8F%E5%9E%8B%E6%A0%AA%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%8A%E3%83%BC" target="_blank" rel="noopener">𝕏 でシェア</a>
+    <a class="share-btn line" href="https://line.me/R/msg/text/?%E3%83%8D%E3%83%83%E3%83%88%E3%82%AD%E3%83%A3%E3%83%83%E3%82%B7%E3%83%A5%E5%80%8D%E7%8E%87%E3%83%A9%E3%83%B3%E3%82%AD%E3%83%B3%E3%82%B0%0ahttps%3A%2F%2Fkabu.tokyo-jp.org%2Fnetcash%2F" target="_blank" rel="noopener">LINE で送る</a>
+    <button class="share-btn copy" id="copy-btn" onclick="copyURL()">🔗 URLをコピー</button>
+    <a class="share-btn feedback" href="https://tally.so/r/PdBLBB" target="_blank" rel="noopener">💬 フィードバック・バグ報告</a>
+  </div>
+</div>
+
+<footer>
+<div class="container">
+  <div class="footer-links">
+    <a class="footer-link" href="https://kabu.tokyo-jp.org/">🏠 ホーム</a>
+    <a class="footer-link" href="https://kabu.tokyo-jp.org/netcash/">📊 ランキング</a>
+    <a class="footer-link" href="https://kabu.tokyo-jp.org/articles/">📖 コラム</a>
+    <a class="footer-link" href="https://kabu.tokyo-jp.org/netcash/guide/">使い方ガイド</a>
+    <a class="footer-link" href="https://kabu.tokyo-jp.org/netcash/privacy/">プライバシーポリシー</a>
+    <a class="footer-link" href="https://tokyo-jp.org/" target="_blank" rel="noopener">tokyo-jp.org ↗</a>
+  </div>
+  本サイトは<strong>清原達郎</strong>氏の著書を参考にした<strong>ネットキャッシュ比率</strong>スクリーニングサイトです。投資判断はご自身の責任でお願いします。<br>
+  © 2026 kabu.tokyo-jp.org
+</div>
+</footer>
+
+<script>
+const HELP={
+  screened:{title:'スクリーニング対象銘柄数',body:`東証上場の全普通株を対象にした総銘柄数です。<strong>銀行・保険・証券などの金融セクターおよびREIT（不動産投資信託）は除外</strong>しています。資産構造が一般事業会社と異なり、ネットキャッシュ比率が実態とかけ離れた値になるためです。`},
+  passed1:{title:'第一条件通過（バックエンド）',body:`毎週金曜日に自動実行するバックエンドスクリーニングの通過銘柄数です。<div class="formula">・NC比率 ≥ 0.7倍<br>・時価総額 3億〜1000億円<br>・PER ≤ 15倍（赤字銘柄も通過）<br>・EDINET財務データ取得済み<br>・東証上場全普通株（金融セクター・REIT除外）</div><div class="tip">この段階では赤字銘柄も含まれます。第二条件フィルターでさらに絞り込んでください。</div>`},
+  passed2:{title:'第二条件通過（フロントエンド）',body:`下のフィルターパネルで設定した条件を適用した後の銘柄数です。フィルターを変更するたびにリアルタイムで更新されます。<br><br><strong>⭐ 推奨条件（デフォルト）</strong><div class="formula">・NC比率 ≥ 1.0倍<br>・時価総額 20億〜500億円<br>・PER ≤ 11倍<br>・黒字企業のみ（EPS &gt; 0）</div>`},
+  surprise_stat:{title:'サプライズ検出件数',body:`スクリーニング<strong>第一条件通過銘柄</strong>（NC比≥0.7x・第一フィルター通過）の中で、TDnet直近3営業日に重要開示が検出された銘柄数です。下のフロントフィルター（第二条件）の設定とは無関係です。<div class="formula">・決算短信（四半期・通期）<br>・業績予想の修正<br>・自社株買いの決議<br>・配当修正</div>`},
+  filters:{title:'フィルターの使い方',body:`各指標のレンジを入力して「適用」ボタンを押すと絞り込みができます。<br><br><strong>⭐ 推奨条件ボタン</strong>でワンクリックで以下の条件を設定できます。<div class="formula">時価総額  : 20億〜500億円<br>PER上限   : 11倍以下（赤字も除外）<br>NC比率下限 : 1.0倍以上<br>黒字企業のみ（EPS &gt; 0）</div><div class="tip">フィルターを手動で変更すると「推奨条件適用中」のバッジが消えます。空欄は条件なしとして扱われます。</div>`},
+  ncr:{title:'ネットキャッシュ（NC）比率',body:`清原達郎氏の著書を参考にした<strong>割安度の核心指標</strong>です。<div class="formula">ネットキャッシュ＝流動資産＋投資有価証券×70%−負債<br>NC比率 ＝ ネットキャッシュ ÷ 時価総額</div><strong>目安</strong><div class="formula">1.0x以上 → 割安圏（推奨条件の基準）<br>1.5x以上 → かなり割安<br>2.5x以上 → 超割安（緑表示）</div>`},
+  pbr:{title:'PBR（株価純資産倍率）',body:`株価が1株あたり純資産の何倍かを示します。<div class="formula">PBR ＝ 株価 ÷ BPS（＝純資産 ÷ 発行済株式数）</div><div class="formula">1.0未満 → 解散価値以下（割安）<br>0.6未満 → かなり割安</div><div class="tip">EDINETの有価証券報告書から取得した純資産・株式数をもとに算出しています。</div>`},
+  per:{title:'PER（株価収益率）',body:`株価が1株あたり純利益の何倍かを示します。<div class="formula">PER ＝ 株価 ÷ EPS</div><div class="formula">11倍以下 → 推奨条件の基準（割安）<br>15倍未満 → 割安圏<br>— 表示　 → 赤字でPER算出不能</div>`},
+  roe:{title:'ROE / ROA',body:`<strong>ROE（自己資本利益率）</strong><div class="formula">ROE ＝ 当期純利益 ÷ 自己資本 × 100(%)</div><strong>ROA（総資産利益率）</strong><div class="formula">ROA ＝ 当期純利益 ÷ 総資産 × 100(%)</div><div class="formula">ROE 8%以上 → 東証の改善目標水準<br>ROE 15%以上 → 優良水準（緑表示）</div>`},
+  div:{title:'配当利回り',body:`年間配当金 ÷ 株価 × 100(%)。<div class="formula">2%以上 → 市場平均水準<br>3%以上 → 高配当<br>—表示 → 無配当</div>`},
+  cap:{title:'時価総額',body:`発行済株式数 × 株価（億円）。<div class="formula">20〜100億円  → 推奨条件の対象（小型）<br>100〜500億円 → 推奨条件の対象（中小型）</div>`},
+  sector:{title:'セクター（業種）',body:`東証33業種分類に基づくセクターです。<strong>銀行・保険・証券などの金融セクターおよびREITは除外</strong>しています（資産構造が一般事業会社と異なりNC比率が意味をなさないため）。`},
+  vtrap:{title:'バリュートラップ（VT）警告',body:`指標上は割安に見えるが株価が上昇しない状態が続く銘柄のことです。<div class="formula">⚠ ROEがマイナス（赤字）<br>⚠ ROEが8%未満（収益力が低い）<br>⚠ 売上高が継続的に減少<br>⚠ 営業CFがマイナス<br>⚠ 自社株買い・配当を未実施</div><div class="warn-block">⚠ 警告シグナルが複数ある銘柄は割安のまま放置されるリスクがあります。</div>`},
+  eps:{title:'EPS（1株あたり利益）と赤字除外',body:`<strong>EPS（Earnings Per Share）</strong>は1株あたりの当期純利益です。<div class="formula">EPS ＝ 当期純利益 ÷ 発行済株式数</div><div class="formula">EPS &gt; 0 → 黒字（推奨条件で絞り込み対象）<br>EPS ≤ 0 → 赤字</div><div class="tip">キャッシュが豊富でも赤字が続く企業はキャッシュが減り続けるリスクがあります。</div>`},
+  surprise_col:{title:'直近サプライズ',body:`TDnetで検出した直近3営業日の開示に基づく判定です。<div class="formula">▲ 好材料：決算上振れ・増配・自社株買い等<br>▼ 悪材料：業績下方修正・減配等<br>—　：直近に重要開示なし</div>`},
+  liquidity:{title:'流動性フィルター',body:`実際に売買が成立しにくい銘柄を除外するフィルターです。<div class="formula">・時価総額 ≥ 3億円<br>・整理・売買停止銘柄でないこと</div>`},
+  score:{title:'スコア（0〜100）',body:`複数指標を組み合わせた総合割安スコアです。<div class="formula">NC比率      最大40点（核心指標）<br>PBR         最大20点<br>PER         最大15点<br>サプライズ　最大15点（触媒）<br>時価総額    最大10点（小型優遇）</div><div class="tip">バリュートラップ警告がある銘柄はスコアから最大15点を減点。フィルター後の順位はこのスコア順に再計算されます。</div>`},
+  operating_cf:{title:'営業キャッシュフロー（CF）',body:`本業でのキャッシュの増減を示します。<div class="formula">プラス → 本業でキャッシュを生んでいる<br>マイナス → 本業でキャッシュを消費中</div><div class="tip">NC比率が高くても営業CFがマイナスの場合、現金が徐々に消費されるリスクがあります。EDINETの有価証券報告書・半期報告書から取得しています。</div>`},
+  revenue_growth:{title:'売上成長率（前期比）',body:`当期売上高の前期比増減率です。<div class="formula">売上成長率 ＝（当期売上 − 前期売上）÷ 前期売上 × 100</div><div class="formula">プラス → 売上成長中<br>マイナス → 売上減少（バリュートラップリスク）</div><div class="tip">EDINETの直近報告書から取得した当期・前期売上をもとに算出。—は前期データが取得できなかった場合です。</div>`},
+};
+
+const VT_LABELS={
+  negative_roe:"ROEがマイナス（赤字継続）",
+  low_roe:"ROEが8%未満（収益力が低い）",
+  revenue_decline:"売上高が継続的に減少",
+  negative_cf:"営業CFがマイナス",
+  no_return:"自社株買い・配当ともに未実施",
+  low_pbr:"PBRが0.3未満（市場が回復を疑視）",
+  debt_unconfirmed:"有利子負債が取得できず（NCが過大の可能性）",
+};
+
+function sh(k){const c=HELP[k];if(!c)return;
+  document.getElementById('h-title').textContent=c.title;
+  document.getElementById('h-body').innerHTML=c.body;
+  document.getElementById('hov').classList.add('open');
+  document.body.style.overflow='hidden';}
+function closeH(){document.getElementById('hov').classList.remove('open');document.body.style.overflow='';}
+function closeHOut(e){if(e.target===document.getElementById('hov'))closeH();}
+
+/* ── 推奨条件 ─────────────────────────────────────────────── */
+const RECOMMENDED={ncrMin:1.0,ncrMax:null,pbrMin:null,pbrMax:null,perMin:null,perMax:11,capMin:20,capMax:500,roeMin:null,roeMax:null,mkt:'all',noTrap:false,profitable:true,watchOnly:false};
+
+let allStocks=[],dispStocks=[],sortKey=null,sortDir='desc',curMkt='all';
+let isRecommended=false;
+let selectedSectors=new Set();
+const ASC_FIRST=new Set(['pbr','per','price','market_cap']);
+
+/* ── ウォッチリスト ──────────────────────────────────────── */
+let watchSet=new Set(JSON.parse(localStorage.getItem('nc_watch')||'[]'));
+function toggleWatch(code,btn,e){
+  e.stopPropagation();
+  if(watchSet.has(code)){watchSet.delete(code);btn.classList.remove('on');btn.textContent='☆';}
+  else{watchSet.add(code);btn.classList.add('on');btn.textContent='⭐';}
+  localStorage.setItem('nc_watch',JSON.stringify([...watchSet]));
+}
+
+async function init(){
+  try{
+    const DATA=await fetch('/data/results.json').then(r=>{
+      if(!r.ok)throw new Error(`HTTP ${r.status}`);
+      return r.json();
+    });
+    allStocks=DATA.stocks||[];
+    document.getElementById('st-total').textContent=(DATA.screened_count||0).toLocaleString();
+    document.getElementById('st-pass').textContent=DATA.passed_count||0;
+    document.getElementById('st-surp').textContent=(DATA.surprise_count||0)+'件';
+    setDiff('df-pass', DATA.passed_count,   DATA.passed_prev,   '件');
+    setDiff('df-surp', DATA.surprise_count, DATA.surprise_prev, '件');
+    const g=new Date(DATA.generated_at);
+    const fmtDate=g.toLocaleDateString('ja-JP')+' '+g.toLocaleTimeString('ja-JP',{hour:'2-digit',minute:'2-digit'});
+    document.getElementById('lastUpdate').textContent=fmtDate;
+    document.getElementById('lastUpdate-sub').textContent='データ更新: '+fmtDate;
+    initSectorFilter();
+    // 初期表示は推奨条件
+    setRecommended();
+  }catch(err){
+    console.error(err);
+    document.getElementById('tbody').innerHTML='';
+    document.getElementById('error-msg').style.display='block';
+  }
+}
+
+function initSectorFilter(){
+  const sectors=[...new Set(allStocks.map(s=>s.sector))].sort();
+  const container=document.getElementById('sector-tags');
+  container.innerHTML='';
+  const allBtn=document.createElement('button');
+  allBtn.className='sector-tag on';allBtn.textContent='全業種';allBtn.dataset.sector='all';
+  allBtn.onclick=()=>{selectedSectors.clear();document.querySelectorAll('.sector-tag').forEach(t=>t.classList.remove('on'));allBtn.classList.add('on');hideBadge();applyFilters(false);};
+  container.appendChild(allBtn);
+  sectors.forEach(sec=>{
+    const btn=document.createElement('button');
+    btn.className='sector-tag';btn.textContent=sec;btn.dataset.sector=sec;
+    btn.onclick=()=>{
+      document.querySelector('.sector-tag[data-sector="all"]').classList.remove('on');
+      btn.classList.toggle('on');
+      if(btn.classList.contains('on'))selectedSectors.add(sec);else selectedSectors.delete(sec);
+      if(selectedSectors.size===0)document.querySelector('.sector-tag[data-sector="all"]').classList.add('on');
+      hideBadge();applyFilters(false);
+    };
+    container.appendChild(btn);
+  });
+}
+
+function exportCSV(){
+  const headers=['銘柄コード','銘柄名','市場','セクター','株価','時価総額(億)','NC比率','ネットキャッシュ(億)','PBR','PER','EPS','ROE(%)','ROA(%)','配当利回り(%)','営業CF(億)','売上成長率(%)','スコア','VT警告数'];
+  const rows=dispStocks.map(s=>[
+    s.code,`"${s.name}"`,s.market,`"${s.sector}"`,s.price,s.market_cap,s.net_cash_ratio,s.net_cash,
+    s.pbr??'',s.per??'',s.eps??'',s.roe??'',s.roa??'',s.div_yield||'',s.operating_cf??'',s.revenue_growth??'',
+    s.score,(s.vtrap_signals||[]).length
+  ]);
+  const csv=[headers,...rows].map(r=>r.join(',')).join('\n');
+  const blob=new Blob(['\uFEFF'+csv],{type:'text/csv;charset=utf-8;'});
+  const a=document.createElement('a');a.href=URL.createObjectURL(blob);
+  a.download=`netcash_${new Date().toISOString().slice(0,10)}.csv`;a.click();
+}
+
+function setDiff(id,cur,prev,unit=''){
+  const el=document.getElementById(id);
+  if(prev==null){el.textContent='';return;}
+  const d=cur-prev;
+  if(d>0){el.textContent=`前回比 ▲${d}${unit}`;el.className='stat-diff up';}
+  else if(d<0){el.textContent=`前回比 ▼${Math.abs(d)}${unit}`;el.className='stat-diff dn';}
+  else{el.textContent='前回比 変化なし';el.className='stat-diff eq';}
+}
+
+
+/* ── フィルター操作 ──────────────────────────────────────── */
+function sv(id,val){document.getElementById(id).value=(val===null||val===undefined)?'':val;}
+function gv(id){const v=document.getElementById(id).value.trim();return v===''?null:parseFloat(v);}
+
+function toggleMkt(mkt,btn){
+  curMkt=mkt;
+  document.querySelectorAll('.mkt-btn').forEach(b=>b.classList.remove('on'));
+  btn.classList.add('on');
+  // 手動変更 → バッジを消す
+  hideBadge();
+}
+
+/* ★ 推奨条件をワンクリックで設定 */
+function setRecommended(){
+  sv('f-ncr-min',RECOMMENDED.ncrMin); sv('f-ncr-max',RECOMMENDED.ncrMax);
+  sv('f-pbr-min',RECOMMENDED.pbrMin); sv('f-pbr-max',RECOMMENDED.pbrMax);
+  sv('f-per-min',RECOMMENDED.perMin); sv('f-per-max',RECOMMENDED.perMax);
+  sv('f-cap-min',RECOMMENDED.capMin); sv('f-cap-max',RECOMMENDED.capMax);
+  sv('f-roe-min',RECOMMENDED.roeMin); sv('f-roe-max',RECOMMENDED.roeMax);
+  document.getElementById('f-notrap').checked    =RECOMMENDED.noTrap;
+  document.getElementById('f-profitable').checked=RECOMMENDED.profitable;
+  document.getElementById('f-watch').checked     =RECOMMENDED.watchOnly;
+  curMkt=RECOMMENDED.mkt;
+  document.querySelectorAll('.mkt-btn').forEach(b=>b.classList.remove('on'));
+  document.querySelector('[data-mkt="all"]').classList.add('on');
+  isRecommended=true;
+  document.getElementById('rec-badge').style.display='inline-flex';
+  applyFilters(false); // バッジを消さずに適用
+}
+
+/* ★ 手動変更時にバッジを消す */
+function hideBadge(){
+  isRecommended=false;
+  document.getElementById('rec-badge').style.display='none';
+}
+
+/* ★ range-inp への入力があったらバッジを消す */
+document.addEventListener('DOMContentLoaded',()=>{
+  document.querySelectorAll('.range-inp').forEach(inp=>{
+    inp.addEventListener('input',hideBadge);
+  });
+  ['f-notrap','f-profitable','f-watch'].forEach(id=>{
+    document.getElementById(id).addEventListener('change',()=>{hideBadge();applyFilters(false);});
+  });
+});
+
+function applyFilters(clearBadge=true){
+  if(clearBadge) hideBadge();
+  const ncrMin=gv('f-ncr-min'),ncrMax=gv('f-ncr-max');
+  const pbrMin=gv('f-pbr-min'),pbrMax=gv('f-pbr-max');
+  const perMin=gv('f-per-min'),perMax=gv('f-per-max');
+  const capMin=gv('f-cap-min'),capMax=gv('f-cap-max');
+  const roeMin=gv('f-roe-min'),roeMax=gv('f-roe-max');
+  const divMin=gv('f-div-min'),divMax=gv('f-div-max');
+  const rgMin =gv('f-rg-min'), rgMax =gv('f-rg-max');
+  const noTrap    =document.getElementById('f-notrap').checked;
+  const profitable=document.getElementById('f-profitable').checked;
+  const watchOnly =document.getElementById('f-watch').checked;
+
+  dispStocks=allStocks.filter(s=>{
+    if(curMkt!=='all'&&s.market!==curMkt)return false;
+    if(selectedSectors.size>0&&!selectedSectors.has(s.sector))return false;
+    if(ncrMin!==null&&s.net_cash_ratio<ncrMin)return false;
+    if(ncrMax!==null&&s.net_cash_ratio>ncrMax)return false;
+    if(pbrMin!==null&&(s.pbr===null||s.pbr<pbrMin))return false;
+    if(pbrMax!==null&&(s.pbr===null||s.pbr>pbrMax))return false;
+    if(perMin!==null&&(s.per===null||s.per<perMin))return false;
+    if(perMax!==null&&(s.per===null||s.per>perMax))return false;
+    if(capMin!==null&&s.market_cap<capMin)return false;
+    if(capMax!==null&&s.market_cap>capMax)return false;
+    if(roeMin!==null&&(s.roe===null||s.roe<roeMin))return false;
+    if(roeMax!==null&&s.roe!==null&&s.roe>roeMax)return false;
+    if(divMin!==null&&(!(s.div_yield>0)||s.div_yield<divMin))return false;
+    if(divMax!==null&&s.div_yield>0&&s.div_yield>divMax)return false;
+    if(rgMin!==null&&(s.revenue_growth===null||s.revenue_growth<rgMin))return false;
+    if(rgMax!==null&&s.revenue_growth!==null&&s.revenue_growth>rgMax)return false;
+    if(noTrap&&s.vtrap_signals&&s.vtrap_signals.length>0)return false;
+    if(profitable&&(s.eps===null||s.eps===undefined||s.eps<=0))return false;
+    if(watchOnly&&!watchSet.has(s.code))return false;
+    return true;
+  });
+  document.getElementById('frc').textContent=dispStocks.length+'件該当';
+  document.getElementById('st-pass2').textContent=dispStocks.length;
+  if(sortKey)applySortToDisp();
+  renderTable();
+}
+
+function resetFilters(){
+  ['f-ncr-min','f-ncr-max','f-pbr-min','f-pbr-max','f-per-min','f-per-max',
+   'f-cap-min','f-cap-max','f-roe-min','f-roe-max','f-div-min','f-div-max',
+   'f-rg-min','f-rg-max'].forEach(id=>document.getElementById(id).value='');
+  document.getElementById('f-notrap').checked=false;
+  document.getElementById('f-profitable').checked=false;
+  document.getElementById('f-watch').checked=false;
+  curMkt='all';
+  document.querySelectorAll('.mkt-btn').forEach(b=>b.classList.remove('on'));
+  document.querySelector('[data-mkt="all"]').classList.add('on');
+  selectedSectors.clear();
+  document.querySelectorAll('.sector-tag').forEach(t=>t.classList.remove('on'));
+  const allSec=document.querySelector('.sector-tag[data-sector="all"]');
+  if(allSec)allSec.classList.add('on');
+  hideBadge();
+  applyFilters(false);
+}
+
+/* ── ソート ──────────────────────────────────────────────── */
+function sort(k){
+  if(sortKey===k){sortDir=sortDir==='asc'?'desc':'asc';}
+  else{sortKey=k;sortDir=ASC_FIRST.has(k)?'asc':'desc';}
+  updateIcons();applySortToDisp();renderTable();
+}
+function applySortToDisp(){
+  dispStocks.sort((a,b)=>{
+    let av=a[sortKey],bv=b[sortKey];
+    if(av==null&&bv==null)return 0;
+    if(av==null)return 1;if(bv==null)return -1;
+    return sortDir==='asc'?av-bv:bv-av;
+  });
+}
+function updateIcons(){
+  ['price','market_cap','net_cash_ratio','pbr','per','roe','div_yield','score'].forEach(k=>{
+    const si=document.getElementById('si-'+k);
+    const th=document.getElementById('th-'+k);
+    if(!si||!th)return;
+    if(k===sortKey){si.textContent=sortDir==='asc'?'↑':'↓';th.classList.add('on');}
+    else{si.textContent='↕';th.classList.remove('on');}
+  });
+}
+
+/* ── テーブル描画（フィルター後に1から順位付け）──────────── */
+function renderTable(){
+  const tbody=document.getElementById('tbody');
+  tbody.innerHTML='';
+  if(!dispStocks.length){
+    tbody.innerHTML='<tr><td colspan="15" style="text-align:center;padding:40px;color:var(--text3);font-size:13px">該当銘柄なし — フィルターを緩めてお試しください</td></tr>';
+    return;
+  }
+  dispStocks.forEach((s,i)=>{
+    const displayRank=i+1;
+    const tr=document.createElement('tr');
+    const hasVT=s.vtrap_signals&&s.vtrap_signals.length>0;
+    if(displayRank<=3)tr.classList.add('top3');
+    if(hasVT)tr.classList.add('vtrap');
+    tr.onclick=()=>openDetail(s,displayRank);
+
+    // フィルター前後の順位変動
+    const diff=s.rank-displayRank;
+    const rch=diff>0?`<span class="rch u">▲${diff}</span>`:diff<0?`<span class="rch d">▼${Math.abs(diff)}</span>`:`<span class="rch e">—</span>`;
+    // 週間ランク変動（先週比）
+    let wch='';
+    if(s.rank_prev!=null){
+      const wd=s.rank_prev-s.rank;
+      wch=wd>0?`<span class="wch u">週↑${wd}</span>`:wd<0?`<span class="wch d">週↓${Math.abs(wd)}</span>`:`<span class="wch e">週—</span>`;
+    }else{
+      wch='<span class="wch e">New</span>';
+    }
+    let medal;
+    if(displayRank===1)medal='<span class="medal G">1</span>';
+    else if(displayRank===2)medal='<span class="medal S">2</span>';
+    else if(displayRank===3)medal='<span class="medal B">3</span>';
+    else medal=`<span class="medal N">${displayRank}</span>`;
+
+    const mc=s.market==='グロース'?'gr':s.market==='スタンダード'?'st':'pr';
+    const ncrCls=s.net_cash_ratio>=2.5?'hi':s.net_cash_ratio>=1.5?'mid':'';
+    const pbrCls=s.pbr!==null&&s.pbr<0.6?'hi':s.pbr!==null&&s.pbr<1.0?'mid':'';
+    const perCls=s.per!==null&&s.per<10?'hi':s.per!==null&&s.per<15?'mid':'';
+    const roeCls=s.roe>=15?'hi':s.roe>=8?'mid':s.roe<0?'red':'';
+    const spH=s.surprise==='positive'?`<span class="sp-badge pos">▲${s.surprise_pct}</span>`
+      :s.surprise==='negative'?`<span class="sp-badge neg">▼${s.surprise_pct}</span>`
+      :`<span class="sp-badge non">—</span>`;
+    const vtH=hasVT?`<span class="trap-badge">⚠${s.vtrap_signals.length}</span>`:`<span style="color:var(--text3);font-size:11px">—</span>`;
+    const scH=`<div class="sc-wrap"><div class="sc-bar"><div class="sc-fill" style="width:${Math.min(100,s.score)}%"></div></div><span class="sc-num">${s.score}</span></div>`;
+    const divCls=s.div_yield>=3?'hi':s.div_yield>=2?'mid':'';
+    const divH=s.div_yield>0?`<span class="num ${divCls}">${s.div_yield.toFixed(1)}%</span>`:`<span style="color:var(--text3);font-size:11px">—</span>`;
+    const isWatched=watchSet.has(s.code);
+    const starH=`<button class="star-btn${isWatched?' on':''}" onclick="toggleWatch('${s.code}',this,event)">${isWatched?'⭐':'☆'}</button>`;
+    tr.innerHTML=`
+      <td style="text-align:center;padding:8px 2px">${starH}</td>
+      <td><div class="rank-cell">${medal}<div style="display:flex;flex-direction:column;line-height:1.2">${rch}${wch}</div></div></td>
+      <td class="stock-cell"><div class="tc">${s.code}</div><div class="tn">${s.name}</div></td>
+      <td><span class="sec-badge" title="${s.sector}">${s.sector}</span></td>
+      <td><span class="mkt-badge ${mc}">${s.market}</span></td>
+      <td class="num">${s.price.toLocaleString()}</td>
+      <td class="num">${s.market_cap.toFixed(1)}</td>
+      <td class="num ${ncrCls}">${s.net_cash_ratio.toFixed(2)}x</td>
+      <td class="num ${pbrCls}">${s.pbr!==null?s.pbr.toFixed(2):'—'}</td>
+      <td class="num ${perCls}">${s.per!==null?s.per.toFixed(1):'—'}</td>
+      <td><div class="metric-pair"><span class="m1 ${roeCls}">${s.roe!==null?s.roe.toFixed(1)+'%':'—'}</span><span class="m2">${s.roa!==null?'ROA '+s.roa.toFixed(1)+'%':'—'}</span></div></td>
+      <td>${divH}</td>
+      <td>${spH}</td>
+      <td>${vtH}</td>
+      <td>${scH}</td>`;
+    tbody.appendChild(tr);
+  });
+}
+
+/* ── 詳細モーダル ─────────────────────────────────────────── */
+function openDetail(s,displayRank){
+  const mc=s.market==='グロース'?'gr':s.market==='スタンダード'?'st':'pr';
+  document.getElementById('d-ticker').textContent=s.code;
+  document.getElementById('d-name').textContent=s.name;
+  document.getElementById('d-sub').innerHTML=`
+    <span class="mkt-badge ${mc}">${s.market}</span>
+    <span class="sec-badge">${s.sector}</span>
+    <span style="color:var(--text3);font-size:10px;font-weight:600">第${displayRank}位</span>
+    ${(()=>{
+      if(s.rank_prev==null)return '<span style="color:var(--accent);font-size:10px;font-weight:700">NEW</span>';
+      const wd=s.rank_prev-s.rank;
+      if(wd>0)return `<span style="color:var(--up);font-size:10px;font-weight:700">週↑${wd}位</span>`;
+      if(wd<0)return `<span style="color:var(--down);font-size:10px;font-weight:700">週↓${Math.abs(wd)}位</span>`;
+      return '<span style="color:var(--text3);font-size:10px">週変動なし</span>';
+    })()} `;
+  const spVal=s.surprise==='positive'?`<span style="color:var(--up);font-weight:700">好材料 ${s.surprise_pct}</span>`
+    :s.surprise==='negative'?`<span style="color:var(--down);font-weight:700">悪材料 ${s.surprise_pct}</span>`:'—';
+  const roeCls=s.roe>=15?'dv-green':s.roe>=8?'dv-orange':s.roe<0?'dv-red':'';
+  const pbrCls=s.pbr!==null&&s.pbr<0.6?'dv-green':'';
+  const perCls=s.per!==null&&s.per<10?'dv-green':'';
+  const divCls=s.div_yield>=3?'dv-green':s.div_yield>=2?'dv-orange':'';
+  const epsVal=s.eps!=null?`<span style="color:${s.eps>0?'var(--up)':'var(--down)'}">${s.eps.toFixed(2)}</span>`:'—';
+  const cfVal=s.operating_cf!=null?s.operating_cf.toFixed(1)+'億円':'—';
+  const cfCls=s.operating_cf!=null&&s.operating_cf<0?'dv-red':s.operating_cf!=null&&s.operating_cf>0?'dv-green':'';
+  const rgVal=s.revenue_growth!=null?(s.revenue_growth>0?'+':'')+s.revenue_growth.toFixed(1)+'%':'—';
+  const rgCls=s.revenue_growth!=null&&s.revenue_growth<0?'dv-red':s.revenue_growth!=null&&s.revenue_growth>0?'dv-green':'';
+  const debtWarn=s.debt_missing?'<span style="font-size:9px;color:var(--warn);display:block;margin-top:1px">※負債未確認</span>':'';
+  document.getElementById('d-grid').innerHTML=`
+    <div class="dmod-stat"><div class="dmod-stat-lbl">NC比率 <span class="hbtn" onclick="sh('ncr')">?</span></div><div class="dmod-stat-val dv-accent">${s.net_cash_ratio.toFixed(2)}x${debtWarn}</div></div>
+    <div class="dmod-stat"><div class="dmod-stat-lbl">スコア <span class="hbtn" onclick="sh('score')">?</span></div><div class="dmod-stat-val dv-green">${s.score}/100</div></div>
+    <div class="dmod-stat"><div class="dmod-stat-lbl">株価</div><div class="dmod-stat-val">${s.price.toLocaleString()}円</div></div>
+    <div class="dmod-stat"><div class="dmod-stat-lbl">時価総額 <span class="hbtn" onclick="sh('cap')">?</span></div><div class="dmod-stat-val">${s.market_cap.toFixed(1)}億円</div></div>
+    <div class="dmod-stat"><div class="dmod-stat-lbl">ネットキャッシュ</div><div class="dmod-stat-val dv-orange">${s.net_cash.toFixed(1)}億円</div></div>
+    <div class="dmod-stat"><div class="dmod-stat-lbl">PBR <span class="hbtn" onclick="sh('pbr')">?</span></div><div class="dmod-stat-val ${pbrCls}">${s.pbr!==null?s.pbr.toFixed(2):'—'}</div></div>
+    <div class="dmod-stat"><div class="dmod-stat-lbl">PER <span class="hbtn" onclick="sh('per')">?</span></div><div class="dmod-stat-val ${perCls}">${s.per!==null?s.per.toFixed(1):'—（赤字）'}</div></div>
+    <div class="dmod-stat"><div class="dmod-stat-lbl">EPS <span class="hbtn" onclick="sh('eps')">?</span></div><div class="dmod-stat-val" style="font-size:15px">${epsVal}</div></div>
+    <div class="dmod-stat"><div class="dmod-stat-lbl">配当利回り <span class="hbtn" onclick="sh('div')">?</span></div><div class="dmod-stat-val ${divCls}" style="font-size:14px">${s.div_yield>0?s.div_yield.toFixed(1)+'%':'—（無配）'}</div></div>
+    <div class="dmod-stat"><div class="dmod-stat-lbl">ROE <span class="hbtn" onclick="sh('roe')">?</span></div><div class="dmod-stat-val ${roeCls}">${s.roe!==null?s.roe.toFixed(1)+'%':'—'}</div></div>
+    <div class="dmod-stat"><div class="dmod-stat-lbl">ROA</div><div class="dmod-stat-val">${s.roa!==null?s.roa.toFixed(1)+'%':'—'}</div></div>
+    <div class="dmod-stat"><div class="dmod-stat-lbl">株式数</div><div class="dmod-stat-val" style="font-size:13px">${s.shares!=null?(s.shares/1e4).toFixed(0)+'万株':'—'}</div></div>
+    <div class="dmod-stat"><div class="dmod-stat-lbl">営業CF <span class="hbtn" onclick="sh('operating_cf')">?</span></div><div class="dmod-stat-val ${cfCls}" style="font-size:13px">${cfVal}</div></div>
+    <div class="dmod-stat"><div class="dmod-stat-lbl">売上成長率 <span class="hbtn" onclick="sh('revenue_growth')">?</span></div><div class="dmod-stat-val ${rgCls}" style="font-size:13px">${rgVal}</div></div>
+    <div class="dmod-stat"><div class="dmod-stat-lbl">サプライズ <span class="hbtn" onclick="sh('surprise_col')">?</span></div><div class="dmod-stat-val" style="font-size:13px">${spVal}</div></div>`;
+  const hasVT=s.vtrap_signals&&s.vtrap_signals.length>0;
+  const trapEl=document.getElementById('d-trap');
+  if(hasVT){
+    const items=s.vtrap_signals.map(sig=>`<div class="trap-item"><span class="ti-icon bad">✕</span><span>${VT_LABELS[sig]||sig}</span></div>`).join('');
+    trapEl.innerHTML=`<div class="trap-section"><div class="trap-section-title">⚠ バリュートラップ警告 <span class="hbtn" onclick="sh('vtrap')">?</span></div><div class="trap-items">${items}</div></div>`;
+  }else{
+    trapEl.innerHTML=`<div class="trap-section" style="background:var(--up-bg);border-color:#86d4ad;margin-bottom:12px"><div class="trap-section-title" style="color:var(--up)">✓ バリュートラップ警告なし</div><div class="trap-items"><div class="trap-item"><span class="ti-icon ok">✓</span><span>主要なバリュートラップシグナルは検出されませんでした</span></div></div></div>`;
+  }
+  const badgeItems=[];
+  if(s.has_buyback)badgeItems.push('<span class="info-badge good">🔄 自社株買い実績あり</span>');
+  document.getElementById('d-badges').innerHTML=badgeItems.length?`<div class="dmod-badges">${badgeItems.join('')}</div>`:'';
+  document.getElementById('d-note').textContent='💡 '+s.note;
+  document.getElementById('d-links').innerHTML=`
+    <a class="dmod-link" href="https://finance.yahoo.co.jp/quote/${s.code}.T" target="_blank" rel="noopener">📈 Yahoo Finance</a>
+    <a class="dmod-link" href="https://www.nikkei.com/nkd/company/?scode=${s.code}" target="_blank" rel="noopener">📰 日経 企業情報</a>`;
+  initStockChart(s.code);
+  document.getElementById('dov').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+let _lwChart=null;
+async function initStockChart(code){
+  const el=document.getElementById('d-chart');
+  el.innerHTML='<div class="chart-msg">チャートを読み込み中...</div>';
+  try{
+    const resp=await fetch('/api/chart?code='+code);
+    const json=await resp.json();
+    if(json.error)throw new Error(json.error);
+    el.innerHTML='';
+    _lwChart=LightweightCharts.createChart(el,{
+      width:el.clientWidth,height:210,
+      layout:{background:{type:'solid',color:'#fff'},textColor:'#3d5068'},
+      grid:{vertLines:{color:'#e8ecf2'},horzLines:{color:'#e8ecf2'}},
+      rightPriceScale:{borderColor:'#d4dae6'},
+      timeScale:{borderColor:'#d4dae6',timeVisible:false},
+      handleScroll:false,handleScale:false,
+      crosshair:{mode:1},
+    });
+    const area=_lwChart.addAreaSeries({
+      lineColor:'#0068d6',
+      topColor:'rgba(0,104,214,.22)',
+      bottomColor:'rgba(0,104,214,.01)',
+      lineWidth:2,
+      priceFormat:{type:'price',precision:0,minMove:1},
+    });
+    area.setData(json.series);
+    _lwChart.timeScale().fitContent();
+  }catch(e){
+    el.innerHTML=`<div class="chart-msg">チャートを取得できませんでした<a href="https://finance.yahoo.co.jp/quote/${code}.T" target="_blank" rel="noopener" style="color:var(--accent)">Yahoo Financeで見る↗</a></div>`;
+  }
+}
+function closeD(){
+  document.getElementById('dov').classList.remove('open');
+  document.body.style.overflow='';
+  if(_lwChart){_lwChart.remove();_lwChart=null;}
+  document.getElementById('d-chart').innerHTML='';
+}
+function closeDOut(e){if(e.target===document.getElementById('dov'))closeD();}
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeD();closeH();}});
+
+function copyURL(){
+  navigator.clipboard.writeText('https://kabu.tokyo-jp.org/netcash/').then(()=>{
+    const btn=document.getElementById('copy-btn');
+    const orig=btn.textContent;
+    btn.textContent='✓ コピーしました';
+    setTimeout(()=>{btn.textContent=orig;},2000);
+  });
+}
+
+init();
+</script>
+</body>
+</html>
