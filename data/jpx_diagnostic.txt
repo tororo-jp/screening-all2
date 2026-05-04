@@ -1,0 +1,12 @@
+=== JPX PDF Diagnostic ===
+{
+  "strategies": {
+    "extract_text": {
+      "pages_with_stocks": 159,
+      "stocks_found": 3405
+    }
+  },
+  "total_pages": 423,
+  "page1_text": "2026年4月30日(木曜日) 1-1\n株 式 相 場 表\nStock Quotations\n立 会 市 場 普 通 取 引\nAuctionTrades RegularWay\n午前 (Themorningtradingsession) 午後 (Theafternoontradingsession)\n売買 売買高加重\nコード 銘柄名 最終気配 前日比 売買高 売買代金\n単位 始値 高値 安値 終値 始値 高値 安値 終値 平均価格\nTrading\nCode Issues Open High Low Close Open High Low Close Finalspecialquote NetChange VWAP TradingVolume TradingValue\nUnit\n円[￥] 円[￥] 円[￥] 円[￥] 円[￥] 円[￥] 円[￥] 円[￥] 円[￥] 円[￥] 円[￥] 千株[thous.shs.] 千円[￥thous.]\n千口/千個[thous.units.]\n内 国 株 式\nDomesticStock\nプライム市場\nPrimeMarket\n水産・農林業 Fishery,Agriculture&Forestry\n1301 100極洋 4,530.00 4,530.00 4,445.00 4,490.00 4,495.00 4,525.00 4,475.00 4,505.00 － -45.00 4,491.5397 61.7 277,128\nKYOKUYOCO.,LTD.\n1332 100ニッスイ 1,226.00 1,230.00 1,201.00 1,224.00 1,220.00 1,234.50 1,216.00 1,223.50 － -13.00 1,220.1581 2,148.8 2,621,875.800\nNissuiCorporation\n1333 100Ｕｍｉｏｓ 1,325.00 1,332.00 1,314.00 1,326.00 1,324.50 1,327.00 1,318.50 1,325.50 － -15.00 1,323.0285 484.3 640,742.700\nUmiosCorporation\n1375 100ユキグニファクトリー 1,053.00 1,053.00 1,048.00 1,050.00 1,051.00 1,054.00 1,050.00 1,050.00 － -6.00 1,050.6797 35.9 37,719.400\nYUKIGUNIFACTORYCO.,LTD.\n1377 100サカタのタネ 4,125.00 4,145.00 4,095.00 4,135.00 4,135.00 4,145.00 4,120.00 4,125.00 － -15.00 4,124.8108 166.5 686,781\nSAKATASEEDCORPORATION\n1379 100ホクト 1,833.00 1,835.00 1,820.00 1,826.00 1,827.00 1,829.00 1,821.00 1,828.00 － -12.00 1,825.7105 76.0 138,754\nHOKUTOCORPORATION\n鉱業 Mining\n1515 100日鉄鉱 2,478.00 2,478.00 2,406.00 2,420.00 2,416.00 2,432.00 2,389.00 2,412.00 － -155.00 2,421.1877 1,227.6 2,972,250\nNittetsuMiningCo.,Ltd.\n1605 100ＩＮＰＥＸ 4,173.00 4,180.00 4,063.00 4,098.00 4,073.00 4,167.00 4,071.00 4,150.00 － 27.00 4,132.6922 9,521.7 39,350,255.100\nINPEXCORPORATION\n1662 100石油資源 2,314.00 2,339.00 2,245.00 2,254.00 2,247.00 2,276.00 2,235.00 2,275.00 － -20.00 2,268.8647 1,939.1 4,399,555.500\nJapanPetroleumExplorationCo.,Ltd.\n1663 100Ｋ＆Ｏエナジー 4,710.00 4,750.00 4,630.00 4,740.00 4,735.00 4,795.00 4,705.00 4,775.00 － -5.00 4,735.4995 215.2 1,019,079.500\nK&OEnergyGroupInc.\n建設業 Construction\n1414 100",
+  "strategy_used": "extract_text"
+}
