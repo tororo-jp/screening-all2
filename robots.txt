@@ -4,6 +4,6 @@ Disallow: /scripts/
 Disallow: /functions/
 Allow: /netcash/
 
-Sitemap: https://kabu.tokyo-jp.org/sitemap.xml
-Sitemap: https://kabu.tokyo-jp.org/sitemap-main.xml
-Sitemap: https://kabu.tokyo-jp.org/netcash/sitemap.xml
+Sitemap: https://screening-all2.pages.dev/sitemap.xml
+Sitemap: https://screening-all2.pages.dev/sitemap-main.xml
+Sitemap: https://screening-all2.pages.dev/netcash/sitemap.xml
