@@ -1,6 +1,6 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "kabu-screening",
+  "name": "kabu-screening-all2",
   "compatibility_date": "2026-04-17",
   "observability": {
     "enabled": true
@@ -13,8 +13,7 @@
   ],
   "routes": [
     {
-      "pattern": "kabu.tokyo-jp.org/*",
-      "zone_name": "tokyo-jp.org"
+      "pattern": "screening-all2.pages.dev/*"
     }
   ]
 }
