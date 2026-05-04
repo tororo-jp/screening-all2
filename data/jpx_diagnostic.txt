@@ -1,0 +1,12 @@
+=== JPX PDF Diagnostic ===
+{
+  "strategies": {
+    "extract_text": {
+      "pages_with_stocks": 159,
+      "stocks_found": 3405
+    }
+  },
+  "total_pages": 423,
+  "page1_text": "2026年4月30日(木曜日) 1-1\n株 式 相 場 表\nStock Quotations\n立 会 市 場 普 通 取 引\nAuctionTrades RegularWay\n午前 (Themorningtradingsession) 午後 (Theafternoontradingsession)\n売買 売買高加重\nコード 銘柄名 最終気配 前日比 売買高 売買代金\n単位 始値 高値 安値 終値 始値 高値 安値 終値 平均価格\nTrading\nCode Issues Open High Low Close Open High Low Close Finalspecialquote NetChange VWAP TradingVolume TradingValue\nUnit\n円[･] 円[･] 円[･] 円[･] 円[･] 円[･] 円[･] 円[･] 円[･] 円[･] 円[･] 千株[thous.shs.] 千円[･thous.]\n千口/千個[thous.units.]\n内 国 株 式\nDomesticStock\nプライム市場\nPrimeMarket\n水産・農林業 Fishery,Agriculture&Forestry\n1301 100極洋 4,530.00 4,530.00 4,445.00 4,490.00 4,495.00 4,525.00 4,475.00 4,505.00 － -45.00 4,491.5397 61.7 277,128\nKYOKUYOCO.,LTD.",
+  "strategy_used": "extract_text"
+}
