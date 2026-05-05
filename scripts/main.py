@@ -44,6 +44,8 @@ ROOT_DIR = Path(__file__).parent.parent
 RESULTS_JSON = ROOT_DIR / "data" / "results.json"
 EDINET_CACHE_JSON = ROOT_DIR / "data" / "edinet_cache.json"
 EDINET_MAP_CACHE_JSON = ROOT_DIR / "data" / "edinet_map_cache.json"
+ALL_STOCKS_JSON = ROOT_DIR / "data" / "all_stocks.json"
+STOCK_HISTORY_DIR = ROOT_DIR / "data" / "stock_history"
 
 JST = pytz.timezone("Asia/Tokyo")
 
@@ -122,6 +124,56 @@ def _write_error_results(error_msg: str, debug: dict) -> None:
         logger.info("Error results written to %s", RESULTS_JSON)
     except Exception as exc:
         logger.warning("Failed to write error results: %s", exc)
+
+
+def _save_all_stocks(all_stocks_data: list[dict], now_jst: datetime) -> None:
+    """Save full metrics for all computed stocks and update per-stock history."""
+    date_str = now_jst.strftime("%Y-%m-%d")
+
+    try:
+        all_out = {
+            "generated_at": now_jst.isoformat(),
+            "count": len(all_stocks_data),
+            "stocks": sorted(
+                all_stocks_data,
+                key=lambda x: x.get("net_cash_ratio") or -999,
+                reverse=True,
+            ),
+        }
+        ALL_STOCKS_JSON.parent.mkdir(parents=True, exist_ok=True)
+        with open(ALL_STOCKS_JSON, "w", encoding="utf-8") as f:
+            json.dump(all_out, f, ensure_ascii=False, indent=2)
+        logger.info("Saved all_stocks.json (%d stocks)", len(all_stocks_data))
+    except Exception as exc:
+        logger.warning("Failed to save all_stocks.json: %s", exc)
+
+    try:
+        STOCK_HISTORY_DIR.mkdir(parents=True, exist_ok=True)
+        for s in all_stocks_data:
+            history_path = STOCK_HISTORY_DIR / f"{s['code']}.json"
+            if history_path.exists():
+                with open(history_path, encoding="utf-8") as f:
+                    history = json.load(f)
+            else:
+                history = []
+            history = [h for h in history if h.get("date") != date_str]
+            history.append({
+                "date": date_str,
+                "price": s["price"],
+                "market_cap": s["market_cap"],
+                "net_cash_ratio": s["net_cash_ratio"],
+                "pbr": s["pbr"],
+                "per": s["per"],
+                "roe": s["roe"],
+                "roa": s["roa"],
+                "div_yield": s["div_yield"],
+            })
+            history.sort(key=lambda x: x["date"])
+            with open(history_path, "w", encoding="utf-8") as f:
+                json.dump(history, f, ensure_ascii=False, indent=2)
+        logger.info("Updated stock history files for %d stocks", len(all_stocks_data))
+    except Exception as exc:
+        logger.warning("Failed to save stock history: %s", exc)
 
 
 def _validate_stock_record(s: dict) -> bool:
@@ -289,6 +341,7 @@ def main() -> None:
     # ---- Step 5 & 6: Calculate metrics and filter ---------------------------
     logger.info("=== Step 5: Calculating metrics and filtering ===")
     stocks_out: list[dict] = []
+    all_stocks_data: list[dict] = []
     skipped_no_data = 0
     skipped_low_nc = 0
 
@@ -325,6 +378,30 @@ def main() -> None:
             continue
 
         ncr = metrics.get("net_cash_ratio")
+        vt_signals = calculator.detect_vt_signals(fin, metrics)
+
+        # Collect all stocks with valid metrics (before NC ratio / PER filters)
+        all_stocks_data.append({
+            "code": code,
+            "name": jpx_data["name"],
+            "market": jpx_data["market"],
+            "sector": jpx_data["sector"],
+            "price": jpx_data["price"],
+            "market_cap": market_cap_oku,
+            "net_cash": metrics["net_cash"],
+            "net_cash_ratio": ncr,
+            "pbr": metrics.get("pbr"),
+            "per": metrics.get("per"),
+            "roe": metrics.get("roe"),
+            "roa": metrics.get("roa"),
+            "div_yield": metrics.get("div_yield") or 0.0,
+            "operating_cf": metrics.get("operating_cf"),
+            "revenue_growth": metrics.get("revenue_growth"),
+            "has_buyback": fin.get("has_buyback", False),
+            "vtrap_signals": vt_signals,
+            "passed_screening": False,  # updated after the full loop
+        })
+
         if ncr is None or ncr < MIN_NC_RATIO:
             skipped_low_nc += 1
             continue
@@ -334,8 +411,6 @@ def main() -> None:
         if per_val is not None and per_val > MAX_PER:
             skipped_low_nc += 1
             continue
-
-        vt_signals = calculator.detect_vt_signals(fin, metrics)
 
         surprise_info = surprises.get(code, {})
         surprise = surprise_info.get("surprise")
@@ -393,14 +468,23 @@ def main() -> None:
         len(stocks_out), skipped_no_data, skipped_small_cap, skipped_low_nc,
     )
 
+    # Mark which stocks passed the screener
+    passed_codes = {s["code"] for s in stocks_out}
+    for s in all_stocks_data:
+        s["passed_screening"] = s["code"] in passed_codes
+
     # ---- Step 7: Sort and assign ranks --------------------------------------
     stocks_out.sort(key=lambda s: s["score"], reverse=True)
     for i, s in enumerate(stocks_out, 1):
         s["rank"] = i
         s["rank_prev"] = prev_rank_map.get(s["code"])
 
-    # ---- Step 8: Write results.json -----------------------------------------
+    # ---- Step 7.5: Save all-stocks database and history ---------------------
     now_jst = datetime.now(JST)
+    logger.info("=== Step 7.5: Saving all-stocks database and history ===")
+    _save_all_stocks(all_stocks_data, now_jst)
+
+    # ---- Step 8: Write results.json -----------------------------------------
     surprise_count = sum(1 for s in stocks_out if s["surprise"] is not None)
 
     output = {
