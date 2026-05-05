@@ -65,7 +65,7 @@ jobs:
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/results.json data/edinet_cache.json data/edinet_map_cache.json data/jpx_diagnostic.txt data/logs/
+          git add data/results.json data/all_stocks.json data/stock_history/ data/edinet_cache.json data/edinet_map_cache.json data/jpx_diagnostic.txt data/logs/
           if git diff --staged --quiet; then
             echo "No changes to commit"
           else
