@@ -280,6 +280,20 @@ footer{border-top:1px solid var(--border);padding:24px 0;margin-top:0;text-align
 .breadcrumb a{color:var(--accent);text-decoration:none}
 .breadcrumb a:hover{text-decoration:underline}
 .breadcrumb span{margin:0 4px;opacity:.5}
+
+/* SEARCH & MODE TOGGLE */
+.search-mode-row{display:flex;align-items:center;gap:8px;margin-bottom:14px;flex-wrap:wrap}
+.search-inp{flex:1;min-width:180px;max-width:340px;background:#fff;border:1.5px solid var(--border2);color:var(--text);padding:7px 12px;border-radius:8px;font-size:12px;font-family:'Noto Sans JP',sans-serif;outline:none;transition:border-color .15s}
+.search-inp:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(0,104,214,.12)}
+.search-inp::placeholder{color:var(--text3)}
+.mode-toggle{display:flex;border:1.5px solid var(--border2);border-radius:8px;overflow:hidden;flex-shrink:0}
+.mode-btn{background:#fff;border:none;border-right:1px solid var(--border2);padding:6px 14px;font-size:11px;font-weight:700;cursor:pointer;color:var(--text2);font-family:'Noto Sans JP',sans-serif;transition:all .15s;white-space:nowrap}
+.mode-btn:last-child{border-right:none}
+.mode-btn.on{background:var(--accent);color:#fff}
+/* CHART TABS */
+.chart-tab-row{display:flex;gap:6px;margin-bottom:8px}
+.chart-tab-btn{background:#fff;border:1.5px solid var(--border2);color:var(--text2);padding:4px 12px;border-radius:6px;font-size:11px;font-weight:700;cursor:pointer;font-family:'Noto Sans JP',sans-serif;transition:all .15s}
+.chart-tab-btn.on{background:var(--accent);border-color:var(--accent);color:#fff}
 </style>
 </head>
 <body>
@@ -293,7 +307,6 @@ footer{border-top:1px solid var(--border);padding:24px 0;margin-top:0;text-align
   </div>
   <div class="header-right">
     <div class="live-badge"><span class="live-dot"></span>最終更新: <span id="lastUpdate" style="margin-left:3px;font-weight:700">--</span></div>
-    <a href="/stocks/" class="nav-link">🗂️ 全銘柄DB</a>
     <a href="/articles/" class="nav-link">📖 コラム</a>
     <a href="/netcash/guide/" class="nav-link">使い方</a>
   </div>
@@ -349,6 +362,13 @@ footer{border-top:1px solid var(--border);padding:24px 0;margin-top:0;text-align
     🔍 スクリーニングフィルター
     <span class="hbtn" onclick="sh('filters')">?</span>
     <span class="recommended-badge" id="rec-badge" style="display:none">⭐ 推奨条件適用中</span>
+  </div>
+  <div class="search-mode-row">
+    <input class="search-inp" id="f-search" type="text" placeholder="🔍 銘柄コード・名称で検索（例: 2788 / アップル）" autocomplete="off">
+    <div class="mode-toggle">
+      <button class="mode-btn on" id="mode-btn-screener" onclick="setMode('screener')">📊 スクリーナー結果</button>
+      <button class="mode-btn" id="mode-btn-full" onclick="setMode('full')">🗂️ 全銘柄表示</button>
+    </div>
   </div>
   <div class="filter-grid">
     <div class="filter-item">
@@ -518,7 +538,12 @@ footer{border-top:1px solid var(--border);padding:24px 0;margin-top:0;text-align
     <div id="d-trap"></div>
     <div id="d-badges"></div>
     <div class="dmod-note"  id="d-note"></div>
+    <div class="chart-tab-row">
+      <button class="chart-tab-btn on" id="ctab-price" onclick="switchChartTab('price')">📈 株価チャート</button>
+      <button class="chart-tab-btn" id="ctab-ncr" onclick="switchChartTab('ncr')">📊 NC比率推移</button>
+    </div>
     <div id="d-chart" class="chart-wrap"></div>
+    <div id="d-ncr-chart" class="chart-wrap" style="display:none"></div>
     <div class="dmod-links" id="d-links"></div>
   </div>
 </div>
@@ -547,7 +572,6 @@ footer{border-top:1px solid var(--border);padding:24px 0;margin-top:0;text-align
   <div class="footer-links">
     <a class="footer-link" href="https://kabu.tokyo-jp.org/">🏠 ホーム</a>
     <a class="footer-link" href="https://kabu.tokyo-jp.org/netcash/">📊 ランキング</a>
-    <a class="footer-link" href="https://kabu.tokyo-jp.org/stocks/">🗂️ 全銘柄DB</a>
     <a class="footer-link" href="https://kabu.tokyo-jp.org/articles/">📖 コラム</a>
     <a class="footer-link" href="https://kabu.tokyo-jp.org/netcash/guide/">使い方ガイド</a>
     <a class="footer-link" href="https://kabu.tokyo-jp.org/netcash/privacy/">プライバシーポリシー</a>
@@ -602,8 +626,8 @@ function closeHOut(e){if(e.target===document.getElementById('hov'))closeH();}
 /* ── 推奨条件 ─────────────────────────────────────────────── */
 const RECOMMENDED={ncrMin:1.0,ncrMax:null,pbrMin:null,pbrMax:null,perMin:null,perMax:11,capMin:20,capMax:500,roeMin:null,roeMax:null,mkt:'all',noTrap:false,profitable:true,watchOnly:false};
 
-let allStocks=[],dispStocks=[],sortKey=null,sortDir='desc',curMkt='all';
-let isRecommended=false;
+let screenerStocks=[],fullDbStocks=[],allStocks=[],dispStocks=[],sortKey=null,sortDir='desc',curMkt='all';
+let isRecommended=false,showMode='screener';
 let selectedSectors=new Set();
 const ASC_FIRST=new Set(['pbr','per','price','market_cap']);
 
@@ -618,11 +642,13 @@ function toggleWatch(code,btn,e){
 
 async function init(){
   try{
-    const DATA=await fetch('/data/results.json').then(r=>{
-      if(!r.ok)throw new Error(`HTTP ${r.status}`);
-      return r.json();
-    });
-    allStocks=DATA.stocks||[];
+    const [DATA, ALL] = await Promise.all([
+      fetch('/data/results.json').then(r=>{ if(!r.ok)throw new Error(`HTTP ${r.status}`); return r.json(); }),
+      fetch('/data/all_stocks.json').then(r=>r.ok?r.json():{stocks:[]}).catch(()=>({stocks:[]})),
+    ]);
+    screenerStocks=DATA.stocks||[];
+    fullDbStocks=ALL.stocks||[];
+    allStocks=screenerStocks;
     document.getElementById('st-total').textContent=(DATA.screened_count||0).toLocaleString();
     document.getElementById('st-pass').textContent=DATA.passed_count||0;
     document.getElementById('st-surp').textContent=(DATA.surprise_count||0)+'件';
@@ -632,7 +658,7 @@ async function init(){
     const fmtDate=g.toLocaleDateString('ja-JP')+' '+g.toLocaleTimeString('ja-JP',{hour:'2-digit',minute:'2-digit'});
     document.getElementById('lastUpdate').textContent=fmtDate;
     document.getElementById('lastUpdate-sub').textContent='データ更新: '+fmtDate;
-    initSectorFilter();
+    initSectorFilter(screenerStocks);
     // 初期表示は推奨条件
     setRecommended();
   }catch(err){
@@ -642,8 +668,9 @@ async function init(){
   }
 }
 
-function initSectorFilter(){
-  const sectors=[...new Set(allStocks.map(s=>s.sector))].sort();
+function initSectorFilter(stocks){
+  selectedSectors.clear();
+  const sectors=[...new Set((stocks||allStocks).map(s=>s.sector))].sort();
   const container=document.getElementById('sector-tags');
   container.innerHTML='';
   const allBtn=document.createElement('button');
@@ -725,6 +752,7 @@ function hideBadge(){
 
 /* ★ range-inp への入力があったらバッジを消す */
 document.addEventListener('DOMContentLoaded',()=>{
+  document.getElementById('f-search').addEventListener('input',()=>applyFilters(false));
   document.querySelectorAll('.range-inp').forEach(inp=>{
     inp.addEventListener('input',hideBadge);
   });
@@ -735,6 +763,7 @@ document.addEventListener('DOMContentLoaded',()=>{
 
 function applyFilters(clearBadge=true){
   if(clearBadge) hideBadge();
+  const q=(document.getElementById('f-search').value||'').trim().toLowerCase();
   const ncrMin=gv('f-ncr-min'),ncrMax=gv('f-ncr-max');
   const pbrMin=gv('f-pbr-min'),pbrMax=gv('f-pbr-max');
   const perMin=gv('f-per-min'),perMax=gv('f-per-max');
@@ -747,10 +776,11 @@ function applyFilters(clearBadge=true){
   const watchOnly =document.getElementById('f-watch').checked;
 
   dispStocks=allStocks.filter(s=>{
+    if(q && !s.code.includes(q) && !(s.name||'').toLowerCase().includes(q))return false;
     if(curMkt!=='all'&&s.market!==curMkt)return false;
     if(selectedSectors.size>0&&!selectedSectors.has(s.sector))return false;
-    if(ncrMin!==null&&s.net_cash_ratio<ncrMin)return false;
-    if(ncrMax!==null&&s.net_cash_ratio>ncrMax)return false;
+    if(ncrMin!==null&&(s.net_cash_ratio===null||s.net_cash_ratio<ncrMin))return false;
+    if(ncrMax!==null&&(s.net_cash_ratio===null||s.net_cash_ratio>ncrMax))return false;
     if(pbrMin!==null&&(s.pbr===null||s.pbr<pbrMin))return false;
     if(pbrMax!==null&&(s.pbr===null||s.pbr>pbrMax))return false;
     if(perMin!==null&&(s.per===null||s.per<perMin))return false;
@@ -764,7 +794,10 @@ function applyFilters(clearBadge=true){
     if(rgMin!==null&&(s.revenue_growth===null||s.revenue_growth<rgMin))return false;
     if(rgMax!==null&&s.revenue_growth!==null&&s.revenue_growth>rgMax)return false;
     if(noTrap&&s.vtrap_signals&&s.vtrap_signals.length>0)return false;
-    if(profitable&&(s.eps===null||s.eps===undefined||s.eps<=0))return false;
+    if(profitable){
+      const prof=showMode==='screener'?(s.eps!=null&&s.eps>0):(s.roe!=null&&s.roe>0);
+      if(!prof)return false;
+    }
     if(watchOnly&&!watchSet.has(s.code))return false;
     return true;
   });
@@ -775,6 +808,7 @@ function applyFilters(clearBadge=true){
 }
 
 function resetFilters(){
+  document.getElementById('f-search').value='';
   ['f-ncr-min','f-ncr-max','f-pbr-min','f-pbr-max','f-per-min','f-per-max',
    'f-cap-min','f-cap-max','f-roe-min','f-roe-max','f-div-min','f-div-max',
    'f-rg-min','f-rg-max'].forEach(id=>document.getElementById(id).value='');
@@ -789,6 +823,17 @@ function resetFilters(){
   const allSec=document.querySelector('.sector-tag[data-sector="all"]');
   if(allSec)allSec.classList.add('on');
   hideBadge();
+  applyFilters(false);
+}
+
+function setMode(mode){
+  showMode=mode;
+  allStocks=mode==='full'?fullDbStocks:screenerStocks;
+  document.getElementById('mode-btn-screener').classList.toggle('on',mode==='screener');
+  document.getElementById('mode-btn-full').classList.toggle('on',mode==='full');
+  // 全銘柄モードはNC比率降順をデフォルトソートに
+  if(mode==='full'){sortKey='net_cash_ratio';sortDir='desc';updateIcons();}
+  initSectorFilter(allStocks);
   applyFilters(false);
 }
 
@@ -824,41 +869,49 @@ function renderTable(){
     tbody.innerHTML='<tr><td colspan="15" style="text-align:center;padding:40px;color:var(--text3);font-size:13px">該当銘柄なし — フィルターを緩めてお試しください</td></tr>';
     return;
   }
+  const isFullMode = showMode === 'full';
   dispStocks.forEach((s,i)=>{
     const displayRank=i+1;
     const tr=document.createElement('tr');
     const hasVT=s.vtrap_signals&&s.vtrap_signals.length>0;
-    if(displayRank<=3)tr.classList.add('top3');
+    if(!isFullMode&&displayRank<=3)tr.classList.add('top3');
     if(hasVT)tr.classList.add('vtrap');
     tr.onclick=()=>openDetail(s,displayRank);
 
-    // フィルター前後の順位変動
-    const diff=s.rank-displayRank;
-    const rch=diff>0?`<span class="rch u">▲${diff}</span>`:diff<0?`<span class="rch d">▼${Math.abs(diff)}</span>`:`<span class="rch e">—</span>`;
-    // 週間ランク変動（先週比）
-    let wch='';
-    if(s.rank_prev!=null){
-      const wd=s.rank_prev-s.rank;
-      wch=wd>0?`<span class="wch u">週↑${wd}</span>`:wd<0?`<span class="wch d">週↓${Math.abs(wd)}</span>`:`<span class="wch e">週—</span>`;
-    }else{
-      wch='<span class="wch e">New</span>';
+    // 順位変動（スクリーナーモードのみ）
+    let rch='<span class="rch e">—</span>', wch='';
+    if(!isFullMode && s.rank!=null){
+      const diff=s.rank-displayRank;
+      rch=diff>0?`<span class="rch u">▲${diff}</span>`:diff<0?`<span class="rch d">▼${Math.abs(diff)}</span>`:`<span class="rch e">—</span>`;
+      if(s.rank_prev!=null){
+        const wd=s.rank_prev-s.rank;
+        wch=wd>0?`<span class="wch u">週↑${wd}</span>`:wd<0?`<span class="wch d">週↓${Math.abs(wd)}</span>`:`<span class="wch e">週—</span>`;
+      }else{
+        wch='<span class="wch e">New</span>';
+      }
     }
     let medal;
-    if(displayRank===1)medal='<span class="medal G">1</span>';
-    else if(displayRank===2)medal='<span class="medal S">2</span>';
-    else if(displayRank===3)medal='<span class="medal B">3</span>';
-    else medal=`<span class="medal N">${displayRank}</span>`;
+    if(!isFullMode){
+      if(displayRank===1)medal='<span class="medal G">1</span>';
+      else if(displayRank===2)medal='<span class="medal S">2</span>';
+      else if(displayRank===3)medal='<span class="medal B">3</span>';
+      else medal=`<span class="medal N">${displayRank}</span>`;
+    }else{
+      medal=`<span class="medal N">${displayRank}</span>`;
+    }
 
     const mc=s.market==='グロース'?'gr':s.market==='スタンダード'?'st':'pr';
-    const ncrCls=s.net_cash_ratio>=2.5?'hi':s.net_cash_ratio>=1.5?'mid':'';
+    const ncr=s.net_cash_ratio;
+    const ncrCls=ncr>=2.5?'hi':ncr>=1.5?'mid':'';
+    const ncrTxt=ncr!=null?ncr.toFixed(2)+'x':'—';
     const pbrCls=s.pbr!==null&&s.pbr<0.6?'hi':s.pbr!==null&&s.pbr<1.0?'mid':'';
     const perCls=s.per!==null&&s.per<10?'hi':s.per!==null&&s.per<15?'mid':'';
     const roeCls=s.roe>=15?'hi':s.roe>=8?'mid':s.roe<0?'red':'';
-    const spH=s.surprise==='positive'?`<span class="sp-badge pos">▲${s.surprise_pct}</span>`
+    const spH=!isFullMode?(s.surprise==='positive'?`<span class="sp-badge pos">▲${s.surprise_pct}</span>`
       :s.surprise==='negative'?`<span class="sp-badge neg">▼${s.surprise_pct}</span>`
-      :`<span class="sp-badge non">—</span>`;
+      :`<span class="sp-badge non">—</span>`):`<span class="sp-badge non">—</span>`;
     const vtH=hasVT?`<span class="trap-badge">⚠${s.vtrap_signals.length}</span>`:`<span style="color:var(--text3);font-size:11px">—</span>`;
-    const scH=`<div class="sc-wrap"><div class="sc-bar"><div class="sc-fill" style="width:${Math.min(100,s.score)}%"></div></div><span class="sc-num">${s.score}</span></div>`;
+    const scH=(!isFullMode&&s.score!=null)?`<div class="sc-wrap"><div class="sc-bar"><div class="sc-fill" style="width:${Math.min(100,s.score)}%"></div></div><span class="sc-num">${s.score}</span></div>`:`<span style="color:var(--text3);font-size:11px">—</span>`;
     const divCls=s.div_yield>=3?'hi':s.div_yield>=2?'mid':'';
     const divH=s.div_yield>0?`<span class="num ${divCls}">${s.div_yield.toFixed(1)}%</span>`:`<span style="color:var(--text3);font-size:11px">—</span>`;
     const isWatched=watchSet.has(s.code);
@@ -869,9 +922,9 @@ function renderTable(){
       <td class="stock-cell"><div class="tc">${s.code}</div><div class="tn">${s.name}</div></td>
       <td><span class="sec-badge" title="${s.sector}">${s.sector}</span></td>
       <td><span class="mkt-badge ${mc}">${s.market}</span></td>
-      <td class="num">${s.price.toLocaleString()}</td>
-      <td class="num">${s.market_cap.toFixed(1)}</td>
-      <td class="num ${ncrCls}">${s.net_cash_ratio.toFixed(2)}x</td>
+      <td class="num">${s.price!=null?s.price.toLocaleString():'—'}</td>
+      <td class="num">${s.market_cap!=null?s.market_cap.toFixed(1):'—'}</td>
+      <td class="num ${ncrCls}">${ncrTxt}</td>
       <td class="num ${pbrCls}">${s.pbr!==null?s.pbr.toFixed(2):'—'}</td>
       <td class="num ${perCls}">${s.per!==null?s.per.toFixed(1):'—'}</td>
       <td><div class="metric-pair"><span class="m1 ${roeCls}">${s.roe!==null?s.roe.toFixed(1)+'%':'—'}</span><span class="m2">${s.roa!==null?'ROA '+s.roa.toFixed(1)+'%':'—'}</span></div></td>
@@ -885,22 +938,32 @@ function renderTable(){
 
 /* ── 詳細モーダル ─────────────────────────────────────────── */
 function openDetail(s,displayRank){
+  _currentChartCode=s.code;
+  // チャートタブを株価に戻す
+  document.getElementById('ctab-price').classList.add('on');
+  document.getElementById('ctab-ncr').classList.remove('on');
+  document.getElementById('d-chart').style.display='';
+  document.getElementById('d-ncr-chart').style.display='none';
+
   const mc=s.market==='グロース'?'gr':s.market==='スタンダード'?'st':'pr';
   document.getElementById('d-ticker').textContent=s.code;
   document.getElementById('d-name').textContent=s.name;
-  document.getElementById('d-sub').innerHTML=`
-    <span class="mkt-badge ${mc}">${s.market}</span>
-    <span class="sec-badge">${s.sector}</span>
-    <span style="color:var(--text3);font-size:10px;font-weight:600">第${displayRank}位</span>
-    ${(()=>{
-      if(s.rank_prev==null)return '<span style="color:var(--accent);font-size:10px;font-weight:700">NEW</span>';
+  let subHtml=`<span class="mkt-badge ${mc}">${s.market}</span><span class="sec-badge">${s.sector}</span>`;
+  if(showMode==='screener'&&s.rank!=null){
+    subHtml+=`<span style="color:var(--text3);font-size:10px;font-weight:600">第${displayRank}位</span>`;
+    if(s.rank_prev==null){
+      subHtml+='<span style="color:var(--accent);font-size:10px;font-weight:700">NEW</span>';
+    }else{
       const wd=s.rank_prev-s.rank;
-      if(wd>0)return `<span style="color:var(--up);font-size:10px;font-weight:700">週↑${wd}位</span>`;
-      if(wd<0)return `<span style="color:var(--down);font-size:10px;font-weight:700">週↓${Math.abs(wd)}位</span>`;
-      return '<span style="color:var(--text3);font-size:10px">週変動なし</span>';
-    })()} `;
-  const spVal=s.surprise==='positive'?`<span style="color:var(--up);font-weight:700">好材料 ${s.surprise_pct}</span>`
-    :s.surprise==='negative'?`<span style="color:var(--down);font-weight:700">悪材料 ${s.surprise_pct}</span>`:'—';
+      if(wd>0)subHtml+=`<span style="color:var(--up);font-size:10px;font-weight:700">週↑${wd}位</span>`;
+      else if(wd<0)subHtml+=`<span style="color:var(--down);font-size:10px;font-weight:700">週↓${Math.abs(wd)}位</span>`;
+      else subHtml+='<span style="color:var(--text3);font-size:10px">週変動なし</span>';
+    }
+  }
+  document.getElementById('d-sub').innerHTML=subHtml;
+
+  const spVal=(showMode==='screener'&&s.surprise==='positive')?`<span style="color:var(--up);font-weight:700">好材料 ${s.surprise_pct}</span>`
+    :(showMode==='screener'&&s.surprise==='negative')?`<span style="color:var(--down);font-weight:700">悪材料 ${s.surprise_pct}</span>`:'—';
   const roeCls=s.roe>=15?'dv-green':s.roe>=8?'dv-orange':s.roe<0?'dv-red':'';
   const pbrCls=s.pbr!==null&&s.pbr<0.6?'dv-green':'';
   const perCls=s.per!==null&&s.per<10?'dv-green':'';
@@ -910,13 +973,15 @@ function openDetail(s,displayRank){
   const cfCls=s.operating_cf!=null&&s.operating_cf<0?'dv-red':s.operating_cf!=null&&s.operating_cf>0?'dv-green':'';
   const rgVal=s.revenue_growth!=null?(s.revenue_growth>0?'+':'')+s.revenue_growth.toFixed(1)+'%':'—';
   const rgCls=s.revenue_growth!=null&&s.revenue_growth<0?'dv-red':s.revenue_growth!=null&&s.revenue_growth>0?'dv-green':'';
-  const debtWarn=s.debt_missing?'<span style="font-size:9px;color:var(--warn);display:block;margin-top:1px">※負債未確認</span>':'';
+  const debtWarn=(s.debt_missing)?'<span style="font-size:9px;color:var(--warn);display:block;margin-top:1px">※負債未確認</span>':'';
+  const ncrTxt=s.net_cash_ratio!=null?s.net_cash_ratio.toFixed(2)+'x':'—';
+  const scoreTxt=(s.score!=null)?s.score+'/100':'—';
   document.getElementById('d-grid').innerHTML=`
-    <div class="dmod-stat"><div class="dmod-stat-lbl">NC比率 <span class="hbtn" onclick="sh('ncr')">?</span></div><div class="dmod-stat-val dv-accent">${s.net_cash_ratio.toFixed(2)}x${debtWarn}</div></div>
-    <div class="dmod-stat"><div class="dmod-stat-lbl">スコア <span class="hbtn" onclick="sh('score')">?</span></div><div class="dmod-stat-val dv-green">${s.score}/100</div></div>
-    <div class="dmod-stat"><div class="dmod-stat-lbl">株価</div><div class="dmod-stat-val">${s.price.toLocaleString()}円</div></div>
-    <div class="dmod-stat"><div class="dmod-stat-lbl">時価総額 <span class="hbtn" onclick="sh('cap')">?</span></div><div class="dmod-stat-val">${s.market_cap.toFixed(1)}億円</div></div>
-    <div class="dmod-stat"><div class="dmod-stat-lbl">ネットキャッシュ</div><div class="dmod-stat-val dv-orange">${s.net_cash.toFixed(1)}億円</div></div>
+    <div class="dmod-stat"><div class="dmod-stat-lbl">NC比率 <span class="hbtn" onclick="sh('ncr')">?</span></div><div class="dmod-stat-val dv-accent">${ncrTxt}${debtWarn}</div></div>
+    <div class="dmod-stat"><div class="dmod-stat-lbl">スコア <span class="hbtn" onclick="sh('score')">?</span></div><div class="dmod-stat-val dv-green">${scoreTxt}</div></div>
+    <div class="dmod-stat"><div class="dmod-stat-lbl">株価</div><div class="dmod-stat-val">${s.price!=null?s.price.toLocaleString()+'円':'—'}</div></div>
+    <div class="dmod-stat"><div class="dmod-stat-lbl">時価総額 <span class="hbtn" onclick="sh('cap')">?</span></div><div class="dmod-stat-val">${s.market_cap!=null?s.market_cap.toFixed(1)+'億円':'—'}</div></div>
+    <div class="dmod-stat"><div class="dmod-stat-lbl">ネットキャッシュ</div><div class="dmod-stat-val dv-orange">${s.net_cash!=null?s.net_cash.toFixed(1)+'億円':'—'}</div></div>
     <div class="dmod-stat"><div class="dmod-stat-lbl">PBR <span class="hbtn" onclick="sh('pbr')">?</span></div><div class="dmod-stat-val ${pbrCls}">${s.pbr!==null?s.pbr.toFixed(2):'—'}</div></div>
     <div class="dmod-stat"><div class="dmod-stat-lbl">PER <span class="hbtn" onclick="sh('per')">?</span></div><div class="dmod-stat-val ${perCls}">${s.per!==null?s.per.toFixed(1):'—（赤字）'}</div></div>
     <div class="dmod-stat"><div class="dmod-stat-lbl">EPS <span class="hbtn" onclick="sh('eps')">?</span></div><div class="dmod-stat-val" style="font-size:15px">${epsVal}</div></div>
@@ -938,7 +1003,9 @@ function openDetail(s,displayRank){
   const badgeItems=[];
   if(s.has_buyback)badgeItems.push('<span class="info-badge good">🔄 自社株買い実績あり</span>');
   document.getElementById('d-badges').innerHTML=badgeItems.length?`<div class="dmod-badges">${badgeItems.join('')}</div>`:'';
-  document.getElementById('d-note').textContent='💡 '+s.note;
+  const noteEl=document.getElementById('d-note');
+  if(s.note){noteEl.textContent='💡 '+s.note;noteEl.style.display='';}
+  else{noteEl.style.display='none';}
   document.getElementById('d-links').innerHTML=`
     <a class="dmod-link" href="https://finance.yahoo.co.jp/quote/${s.code}.T" target="_blank" rel="noopener">📈 Yahoo Finance</a>
     <a class="dmod-link" href="https://www.nikkei.com/nkd/company/?scode=${s.code}" target="_blank" rel="noopener">📰 日経 企業情報</a>`;
@@ -946,7 +1013,47 @@ function openDetail(s,displayRank){
   document.getElementById('dov').classList.add('open');
   document.body.style.overflow='hidden';
 }
-let _lwChart=null;
+let _lwChart=null,_lwNcrChart=null,_currentChartCode=null;
+
+function switchChartTab(tab){
+  document.getElementById('ctab-price').classList.toggle('on',tab==='price');
+  document.getElementById('ctab-ncr').classList.toggle('on',tab==='ncr');
+  document.getElementById('d-chart').style.display=tab==='price'?'':'none';
+  document.getElementById('d-ncr-chart').style.display=tab==='ncr'?'':'none';
+  if(tab==='ncr')initNcrChart(_currentChartCode);
+}
+
+async function initNcrChart(code){
+  const el=document.getElementById('d-ncr-chart');
+  if(!el||!code)return;
+  if(_lwNcrChart){_lwNcrChart.remove();_lwNcrChart=null;}
+  el.innerHTML='<div class="chart-msg">読み込み中...</div>';
+  try{
+    const resp=await fetch('/data/stock_history/'+code+'.json');
+    if(!resp.ok)throw new Error('not found');
+    const history=await resp.json();
+    const points=history.filter(h=>h.net_cash_ratio!=null).map(h=>({time:h.date,value:h.net_cash_ratio}));
+    if(points.length<2)throw new Error('insufficient');
+    el.innerHTML='';
+    _lwNcrChart=LightweightCharts.createChart(el,{
+      width:el.clientWidth,height:210,
+      layout:{background:{type:'solid',color:'#fff'},textColor:'#3d5068'},
+      grid:{vertLines:{color:'#e8ecf2'},horzLines:{color:'#e8ecf2'}},
+      rightPriceScale:{borderColor:'#d4dae6'},
+      timeScale:{borderColor:'#d4dae6',timeVisible:false},
+      handleScroll:false,handleScale:false,
+      crosshair:{mode:1},
+    });
+    const line=_lwNcrChart.addLineSeries({
+      color:'#0068d6',lineWidth:2,priceLineVisible:false,lastValueVisible:true,title:'NC比率',
+    });
+    line.setData(points);
+    _lwNcrChart.timeScale().fitContent();
+  }catch(e){
+    el.innerHTML='<div class="chart-msg">NC比率の履歴データがまだありません<br><small style="color:#aaa;margin-top:4px">毎週金曜日のスクリーニング後に蓄積されます</small></div>';
+  }
+}
+
 async function initStockChart(code){
   const el=document.getElementById('d-chart');
   el.innerHTML='<div class="chart-msg">チャートを読み込み中...</div>';
@@ -981,7 +1088,10 @@ function closeD(){
   document.getElementById('dov').classList.remove('open');
   document.body.style.overflow='';
   if(_lwChart){_lwChart.remove();_lwChart=null;}
+  if(_lwNcrChart){_lwNcrChart.remove();_lwNcrChart=null;}
   document.getElementById('d-chart').innerHTML='';
+  document.getElementById('d-ncr-chart').innerHTML='';
+  _currentChartCode=null;
 }
 function closeDOut(e){if(e.target===document.getElementById('dov'))closeD();}
 document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeD();closeH();}});
