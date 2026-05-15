@@ -1,5 +1,5 @@
 {
-  "last_scan_date": "2026-05-08",
+  "last_scan_date": "2026-05-15",
   "map": {
     "9679": {
       "edinet_code": "E04691",
@@ -6310,10 +6310,10 @@
     },
     "7539": {
       "edinet_code": "E02865",
-      "doc_id": "S100XAO8",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-17",
-      "doc_type": "120"
+      "doc_id": "S100Y34W",
+      "period_end": "2026-03-31",
+      "submit_date": "2026-05-14",
+      "doc_type": "160"
     },
     "8894": {
       "edinet_code": "E03993",
@@ -7234,59 +7234,59 @@
     },
     "9552": {
       "edinet_code": "E37733",
-      "doc_id": "S100XDNQ",
-      "period_end": "2025-09-30",
-      "submit_date": "2026-01-05",
-      "doc_type": "120"
+      "doc_id": "S100Y47P",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-15",
+      "doc_type": "160"
     },
     "6731": {
       "edinet_code": "E02075",
-      "doc_id": "S100XCO8",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-26",
-      "doc_type": "120"
+      "doc_id": "S100Y3UM",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-15",
+      "doc_type": "160"
     },
     "4124": {
       "edinet_code": "E33382",
-      "doc_id": "S100XDGQ",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-26",
-      "doc_type": "120"
+      "doc_id": "S100Y3QH",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-14",
+      "doc_type": "160"
     },
     "3556": {
       "edinet_code": "E31751",
-      "doc_id": "S100XCQX",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-26",
-      "doc_type": "120"
+      "doc_id": "S100Y3D0",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-13",
+      "doc_type": "160"
     },
     "3674": {
       "edinet_code": "E27394",
-      "doc_id": "S100XDE3",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-26",
-      "doc_type": "120"
+      "doc_id": "S100Y4DO",
+      "period_end": "2026-03-31",
+      "submit_date": "2026-05-15",
+      "doc_type": "160"
     },
     "3710": {
       "edinet_code": "E05336",
-      "doc_id": "S100XDG9",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-26",
-      "doc_type": "120"
+      "doc_id": "S100Y49B",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-15",
+      "doc_type": "160"
     },
     "7030": {
       "edinet_code": "E34053",
-      "doc_id": "S100XCTM",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-26",
-      "doc_type": "120"
+      "doc_id": "S100Y2WN",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-12",
+      "doc_type": "160"
     },
     "4445": {
       "edinet_code": "E34513",
-      "doc_id": "S100XDJI",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-26",
-      "doc_type": "120"
+      "doc_id": "S100Y4HG",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-15",
+      "doc_type": "160"
     },
     "6083": {
       "edinet_code": "E27855",
@@ -7297,66 +7297,66 @@
     },
     "9259": {
       "edinet_code": "E37197",
-      "doc_id": "S100XCXG",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-26",
-      "doc_type": "120"
+      "doc_id": "S100Y2ZH",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-12",
+      "doc_type": "160"
     },
     "3067": {
       "edinet_code": "E03485",
-      "doc_id": "S100XCZ1",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-25",
-      "doc_type": "120"
+      "doc_id": "S100Y4CQ",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-15",
+      "doc_type": "160"
     },
     "3323": {
       "edinet_code": "E02971",
-      "doc_id": "S100XD4C",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-25",
-      "doc_type": "120"
+      "doc_id": "S100Y4BB",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-15",
+      "doc_type": "160"
     },
     "4071": {
       "edinet_code": "E36635",
-      "doc_id": "S100XD0A",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-25",
-      "doc_type": "120"
+      "doc_id": "S100Y39H",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-13",
+      "doc_type": "160"
     },
     "9562": {
       "edinet_code": "E37957",
-      "doc_id": "S100XCST",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-25",
-      "doc_type": "120"
+      "doc_id": "S100Y3Z0",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-15",
+      "doc_type": "160"
     },
     "3672": {
       "edinet_code": "E27280",
-      "doc_id": "S100XCNH",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-25",
-      "doc_type": "120"
+      "doc_id": "S100Y3Q4",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-15",
+      "doc_type": "160"
     },
     "4055": {
       "edinet_code": "E35824",
-      "doc_id": "S100XD2T",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-25",
-      "doc_type": "120"
+      "doc_id": "S100Y3B0",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-13",
+      "doc_type": "160"
     },
     "7066": {
       "edinet_code": "E34954",
-      "doc_id": "S100XD95",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-25",
-      "doc_type": "120"
+      "doc_id": "S100Y20W",
+      "period_end": "2026-03-31",
+      "submit_date": "2026-05-14",
+      "doc_type": "160"
     },
     "2652": {
       "edinet_code": "E03347",
-      "doc_id": "S100XD0Z",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-25",
-      "doc_type": "120"
+      "doc_id": "S100Y431",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-15",
+      "doc_type": "160"
     },
     "3549": {
       "edinet_code": "E10737",
@@ -7367,38 +7367,38 @@
     },
     "7071": {
       "edinet_code": "E35140",
-      "doc_id": "S100XD1A",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-25",
-      "doc_type": "120"
+      "doc_id": "S100Y3ZE",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-14",
+      "doc_type": "160"
     },
     "6198": {
       "edinet_code": "E32193",
-      "doc_id": "S100XD0G",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-25",
-      "doc_type": "120"
+      "doc_id": "S100Y4CZ",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-15",
+      "doc_type": "160"
     },
     "4393": {
       "edinet_code": "E34116",
-      "doc_id": "S100XD6Y",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-25",
-      "doc_type": "120"
+      "doc_id": "S100Y3VU",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-15",
+      "doc_type": "160"
     },
     "9941": {
       "edinet_code": "E02762",
-      "doc_id": "S100XD30",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-25",
-      "doc_type": "120"
+      "doc_id": "S100Y3TD",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-15",
+      "doc_type": "160"
     },
     "9564": {
       "edinet_code": "E38007",
-      "doc_id": "S100XDAL",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-25",
-      "doc_type": "120"
+      "doc_id": "S100Y3YQ",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-14",
+      "doc_type": "160"
     },
     "5533": {
       "edinet_code": "E38634",
@@ -7409,73 +7409,73 @@
     },
     "4172": {
       "edinet_code": "E36002",
-      "doc_id": "S100XCQ7",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-24",
-      "doc_type": "120"
+      "doc_id": "S100Y3DY",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-13",
+      "doc_type": "160"
     },
     "7800": {
       "edinet_code": "E34028",
-      "doc_id": "S100XCGX",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-24",
-      "doc_type": "120"
+      "doc_id": "S100Y3YU",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-15",
+      "doc_type": "160"
     },
     "9244": {
       "edinet_code": "E36961",
-      "doc_id": "S100XCIW",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-24",
-      "doc_type": "120"
+      "doc_id": "S100Y475",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-15",
+      "doc_type": "160"
     },
     "3495": {
       "edinet_code": "E34256",
-      "doc_id": "S100XCMA",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-24",
-      "doc_type": "120"
+      "doc_id": "S100Y3WU",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-15",
+      "doc_type": "160"
     },
     "1795": {
       "edinet_code": "E00254",
-      "doc_id": "S100XCIB",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-24",
-      "doc_type": "120"
+      "doc_id": "S100Y3KW",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-14",
+      "doc_type": "160"
     },
     "9376": {
       "edinet_code": "E04365",
-      "doc_id": "S100XCUO",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-24",
-      "doc_type": "120"
+      "doc_id": "S100Y3SL",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-14",
+      "doc_type": "160"
     },
     "9330": {
       "edinet_code": "E38849",
-      "doc_id": "S100XCV7",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-24",
-      "doc_type": "120"
+      "doc_id": "S100Y43A",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-14",
+      "doc_type": "160"
     },
     "6080": {
       "edinet_code": "E30022",
-      "doc_id": "S100XCS6",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-24",
-      "doc_type": "120"
+      "doc_id": "S100Y3XA",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-15",
+      "doc_type": "160"
     },
     "4424": {
       "edinet_code": "E34497",
-      "doc_id": "S100XCQC",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-24",
-      "doc_type": "120"
+      "doc_id": "S100Y427",
+      "period_end": "2026-03-31",
+      "submit_date": "2026-05-15",
+      "doc_type": "160"
     },
     "7041": {
       "edinet_code": "E34352",
-      "doc_id": "S100XCNC",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-24",
-      "doc_type": "120"
+      "doc_id": "S100Y498",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-15",
+      "doc_type": "160"
     },
     "4475": {
       "edinet_code": "E35150",
@@ -7486,17 +7486,17 @@
     },
     "4447": {
       "edinet_code": "E33384",
-      "doc_id": "S100XCY2",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-24",
-      "doc_type": "120"
+      "doc_id": "S100Y44C",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-14",
+      "doc_type": "160"
     },
     "6094": {
       "edinet_code": "E30648",
-      "doc_id": "S100XCVT",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-24",
-      "doc_type": "120"
+      "doc_id": "S100Y4DW",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-15",
+      "doc_type": "160"
     },
     "1438": {
       "edinet_code": "E32682",
@@ -7507,199 +7507,199 @@
     },
     "4196": {
       "edinet_code": "E36532",
-      "doc_id": "S100XCJL",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-24",
-      "doc_type": "120"
+      "doc_id": "S100Y3UR",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-14",
+      "doc_type": "160"
     },
     "3187": {
       "edinet_code": "E27815",
-      "doc_id": "S100XCKW",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-24",
-      "doc_type": "120"
+      "doc_id": "S100Y41X",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-15",
+      "doc_type": "160"
     },
     "4751": {
       "edinet_code": "E05072",
-      "doc_id": "S100XCU9",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-24",
-      "doc_type": "120"
+      "doc_id": "S100Y3K5",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-13",
+      "doc_type": "160"
     },
     "4427": {
       "edinet_code": "E34544",
-      "doc_id": "S100XCYG",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-24",
-      "doc_type": "120"
+      "doc_id": "S100Y3J2",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-14",
+      "doc_type": "160"
     },
     "3691": {
       "edinet_code": "E30856",
-      "doc_id": "S100XCZ7",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-24",
-      "doc_type": "120"
+      "doc_id": "S100Y4HQ",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-15",
+      "doc_type": "160"
     },
     "7376": {
       "edinet_code": "E36655",
-      "doc_id": "S100XC7N",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-23",
-      "doc_type": "120"
+      "doc_id": "S100Y3XN",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-15",
+      "doc_type": "160"
     },
     "7494": {
       "edinet_code": "E03259",
-      "doc_id": "S100XC1F",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-23",
-      "doc_type": "120"
+      "doc_id": "S100Y3V3",
+      "period_end": "2026-03-31",
+      "submit_date": "2026-05-15",
+      "doc_type": "160"
     },
     "4937": {
       "edinet_code": "E36697",
-      "doc_id": "S100XCAJ",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-23",
-      "doc_type": "120"
+      "doc_id": "S100Y3R1",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-14",
+      "doc_type": "160"
     },
     "6466": {
       "edinet_code": "E01716",
-      "doc_id": "S100XBK6",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-23",
-      "doc_type": "120"
+      "doc_id": "S100Y33H",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-12",
+      "doc_type": "160"
     },
     "4421": {
       "edinet_code": "E34335",
-      "doc_id": "S100XCIO",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-23",
-      "doc_type": "120"
+      "doc_id": "S100Y3YV",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-14",
+      "doc_type": "160"
     },
     "9249": {
       "edinet_code": "E36968",
-      "doc_id": "S100XCE0",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-23",
-      "doc_type": "120"
+      "doc_id": "S100Y3SS",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-15",
+      "doc_type": "160"
     },
     "2498": {
       "edinet_code": "E05646",
-      "doc_id": "S100XBHA",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-23",
-      "doc_type": "120"
+      "doc_id": "S100Y36U",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-15",
+      "doc_type": "160"
     },
     "3624": {
       "edinet_code": "E05707",
-      "doc_id": "S100XBJN",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-23",
-      "doc_type": "120"
+      "doc_id": "S100Y3LH",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-14",
+      "doc_type": "160"
     },
     "2667": {
       "edinet_code": "E02922",
-      "doc_id": "S100XAH7",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-23",
-      "doc_type": "120"
+      "doc_id": "S100Y3R2",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-14",
+      "doc_type": "160"
     },
     "9212": {
       "edinet_code": "E37153",
-      "doc_id": "S100XC32",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-23",
-      "doc_type": "120"
+      "doc_id": "S100Y3WE",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-15",
+      "doc_type": "160"
     },
     "4059": {
       "edinet_code": "E35945",
-      "doc_id": "S100XBZX",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-23",
-      "doc_type": "120"
+      "doc_id": "S100Y40P",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-14",
+      "doc_type": "160"
     },
     "5724": {
       "edinet_code": "E21649",
-      "doc_id": "S100XCLW",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-23",
-      "doc_type": "120"
+      "doc_id": "S100Y4GD",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-15",
+      "doc_type": "160"
     },
     "9248": {
       "edinet_code": "E36223",
-      "doc_id": "S100XBUH",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-23",
-      "doc_type": "120"
+      "doc_id": "S100Y4E6",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-15",
+      "doc_type": "160"
     },
     "6191": {
       "edinet_code": "E32194",
-      "doc_id": "S100XCN2",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-23",
-      "doc_type": "120"
+      "doc_id": "S100Y4G0",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-15",
+      "doc_type": "160"
     },
     "4769": {
       "edinet_code": "E05101",
-      "doc_id": "S100XBNE",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-22",
-      "doc_type": "120"
+      "doc_id": "S100Y356",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-14",
+      "doc_type": "160"
     },
     "6877": {
       "edinet_code": "E02040",
-      "doc_id": "S100XB5N",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-22",
-      "doc_type": "120"
+      "doc_id": "S100Y2PN",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-13",
+      "doc_type": "160"
     },
     "6492": {
       "edinet_code": "E01609",
-      "doc_id": "S100XBYD",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-22",
-      "doc_type": "120"
+      "doc_id": "S100Y41T",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-15",
+      "doc_type": "160"
     },
     "4243": {
       "edinet_code": "E02494",
-      "doc_id": "S100XC1P",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-22",
-      "doc_type": "120"
+      "doc_id": "S100Y3SQ",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-14",
+      "doc_type": "160"
     },
     "9869": {
       "edinet_code": "E02719",
-      "doc_id": "S100XA3X",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-22",
-      "doc_type": "120"
+      "doc_id": "S100Y2CY",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-15",
+      "doc_type": "160"
     },
     "2917": {
       "edinet_code": "E00495",
-      "doc_id": "S100XBNR",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-22",
-      "doc_type": "120"
+      "doc_id": "S100Y3XL",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-15",
+      "doc_type": "160"
     },
     "7072": {
       "edinet_code": "E35157",
-      "doc_id": "S100XBTQ",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-22",
-      "doc_type": "120"
+      "doc_id": "S100Y44E",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-15",
+      "doc_type": "160"
     },
     "7643": {
       "edinet_code": "E03340",
-      "doc_id": "S100XC2D",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-22",
-      "doc_type": "120"
+      "doc_id": "S100Y3CE",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-12",
+      "doc_type": "160"
     },
     "6554": {
       "edinet_code": "E33357",
-      "doc_id": "S100XBSY",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-22",
-      "doc_type": "120"
+      "doc_id": "S100Y473",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-15",
+      "doc_type": "160"
     },
     "7792": {
       "edinet_code": "E36670",
@@ -7710,10 +7710,10 @@
     },
     "9554": {
       "edinet_code": "E37744",
-      "doc_id": "S100XC3I",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-22",
-      "doc_type": "120"
+      "doc_id": "S100Y4GC",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-15",
+      "doc_type": "160"
     },
     "3544": {
       "edinet_code": "E32381",
@@ -7731,17 +7731,17 @@
     },
     "3993": {
       "edinet_code": "E33391",
-      "doc_id": "S100XC4P",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-22",
-      "doc_type": "120"
+      "doc_id": "S100Y3XP",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-14",
+      "doc_type": "160"
     },
     "7839": {
       "edinet_code": "E02470",
-      "doc_id": "S100XC55",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-22",
-      "doc_type": "120"
+      "doc_id": "S100Y366",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-12",
+      "doc_type": "160"
     },
     "6428": {
       "edinet_code": "E01718",
@@ -7801,374 +7801,374 @@
     },
     "5921": {
       "edinet_code": "E01381",
-      "doc_id": "S100XBJH",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-22",
-      "doc_type": "120"
+      "doc_id": "S100Y3SU",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-15",
+      "doc_type": "160"
     },
     "2122": {
       "edinet_code": "E05623",
-      "doc_id": "S100XC5E",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-22",
-      "doc_type": "120"
+      "doc_id": "S100Y3L7",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-13",
+      "doc_type": "160"
     },
     "3359": {
       "edinet_code": "E02982",
-      "doc_id": "S100XBJQ",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-22",
-      "doc_type": "120"
+      "doc_id": "S100Y2MX",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-15",
+      "doc_type": "160"
     },
     "2304": {
       "edinet_code": "E05288",
-      "doc_id": "S100XC7V",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-22",
-      "doc_type": "120"
+      "doc_id": "S100Y3NM",
+      "period_end": "2026-03-31",
+      "submit_date": "2026-05-13",
+      "doc_type": "160"
     },
     "3563": {
       "edinet_code": "E33000",
-      "doc_id": "S100XBTY",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-22",
-      "doc_type": "120"
+      "doc_id": "S100Y3GH",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-14",
+      "doc_type": "160"
     },
     "1783": {
       "edinet_code": "E00263",
-      "doc_id": "S100XC79",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-22",
-      "doc_type": "120"
+      "doc_id": "S100Y457",
+      "period_end": "2026-03-31",
+      "submit_date": "2026-05-15",
+      "doc_type": "160"
     },
     "3288": {
       "edinet_code": "E27842",
-      "doc_id": "S100XBTG",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-22",
-      "doc_type": "120"
+      "doc_id": "S100Y2LI",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-11",
+      "doc_type": "160"
     },
     "2120": {
       "edinet_code": "E05624",
-      "doc_id": "S100X8TY",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-22",
-      "doc_type": "120"
+      "doc_id": "S100Y2UN",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-12",
+      "doc_type": "160"
     },
     "6233": {
       "edinet_code": "E34273",
-      "doc_id": "S100XBSH",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-22",
-      "doc_type": "120"
+      "doc_id": "S100Y3Z2",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-15",
+      "doc_type": "160"
     },
     "1446": {
       "edinet_code": "E34095",
-      "doc_id": "S100XBZH",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-22",
-      "doc_type": "120"
+      "doc_id": "S100Y3RG",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-14",
+      "doc_type": "160"
     },
     "5570": {
       "edinet_code": "E38541",
-      "doc_id": "S100XC8W",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-22",
-      "doc_type": "120"
+      "doc_id": "S100Y386",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-12",
+      "doc_type": "160"
     },
     "6563": {
       "edinet_code": "E33601",
-      "doc_id": "S100XBZI",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-22",
-      "doc_type": "120"
+      "doc_id": "S100Y3UP",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-14",
+      "doc_type": "160"
     },
     "4376": {
       "edinet_code": "E36733",
-      "doc_id": "S100XC6R",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-22",
-      "doc_type": "120"
+      "doc_id": "S100Y466",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-15",
+      "doc_type": "160"
     },
     "3989": {
       "edinet_code": "E33242",
-      "doc_id": "S100XC4O",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-22",
-      "doc_type": "120"
+      "doc_id": "S100Y433",
+      "period_end": "2026-03-31",
+      "submit_date": "2026-05-15",
+      "doc_type": "160"
     },
     "3985": {
       "edinet_code": "E33040",
-      "doc_id": "S100XBTL",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-22",
-      "doc_type": "120"
+      "doc_id": "S100Y3WG",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-14",
+      "doc_type": "160"
     },
     "9225": {
       "edinet_code": "E37810",
-      "doc_id": "S100XC8K",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-22",
-      "doc_type": "120"
+      "doc_id": "S100Y4E3",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-15",
+      "doc_type": "160"
     },
     "3900": {
       "edinet_code": "E31019",
-      "doc_id": "S100XBLZ",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-22",
-      "doc_type": "120"
+      "doc_id": "S100Y3TI",
+      "period_end": "2026-03-31",
+      "submit_date": "2026-05-14",
+      "doc_type": "160"
     },
     "5137": {
       "edinet_code": "E38205",
-      "doc_id": "S100XC5Q",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-22",
-      "doc_type": "120"
+      "doc_id": "S100Y3LC",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-14",
+      "doc_type": "160"
     },
     "4499": {
       "edinet_code": "E35632",
-      "doc_id": "S100XC4C",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-22",
-      "doc_type": "120"
+      "doc_id": "S100Y492",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-15",
+      "doc_type": "160"
     },
     "6551": {
       "edinet_code": "E33272",
-      "doc_id": "S100XCA9",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-22",
-      "doc_type": "120"
+      "doc_id": "S100Y37T",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-13",
+      "doc_type": "160"
     },
     "3726": {
       "edinet_code": "E05395",
-      "doc_id": "S100XCAO",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-22",
-      "doc_type": "120"
+      "doc_id": "S100Y476",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-15",
+      "doc_type": "160"
     },
     "3920": {
       "edinet_code": "E31754",
-      "doc_id": "S100XBM8",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-19",
-      "doc_type": "120"
+      "doc_id": "S100Y3SW",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-14",
+      "doc_type": "160"
     },
     "3723": {
       "edinet_code": "E05360",
-      "doc_id": "S100XBL7",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-19",
-      "doc_type": "120"
+      "doc_id": "S100Y3DZ",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-14",
+      "doc_type": "160"
     },
     "7356": {
       "edinet_code": "E35993",
-      "doc_id": "S100XBJI",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-19",
-      "doc_type": "120"
+      "doc_id": "S100Y3H0",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-14",
+      "doc_type": "160"
     },
     "4809": {
       "edinet_code": "E05414",
-      "doc_id": "S100XB3E",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-19",
-      "doc_type": "120"
+      "doc_id": "S100Y3WW",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-15",
+      "doc_type": "160"
     },
     "6277": {
       "edinet_code": "E01676",
-      "doc_id": "S100XB4O",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-19",
-      "doc_type": "120"
+      "doc_id": "S100Y2KF",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-11",
+      "doc_type": "160"
     },
     "9438": {
       "edinet_code": "E05049",
-      "doc_id": "S100XBLK",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-19",
-      "doc_type": "120"
+      "doc_id": "S100Y47X",
+      "period_end": "2026-03-31",
+      "submit_date": "2026-05-15",
+      "doc_type": "160"
     },
     "7527": {
       "edinet_code": "E02858",
-      "doc_id": "S100XBIV",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-19",
-      "doc_type": "120"
+      "doc_id": "S100Y4CS",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-15",
+      "doc_type": "160"
     },
     "4884": {
       "edinet_code": "E36129",
-      "doc_id": "S100XBJD",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-19",
-      "doc_type": "120"
+      "doc_id": "S100Y2Q5",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-11",
+      "doc_type": "160"
     },
     "8944": {
       "edinet_code": "E04038",
-      "doc_id": "S100X9MO",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-19",
-      "doc_type": "120"
+      "doc_id": "S100Y1KW",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-14",
+      "doc_type": "160"
     },
     "2874": {
       "edinet_code": "E02576",
-      "doc_id": "S100XBSF",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-19",
-      "doc_type": "120"
+      "doc_id": "S100Y48T",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-15",
+      "doc_type": "160"
     },
     "2485": {
       "edinet_code": "E05585",
-      "doc_id": "S100XBVP",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-19",
-      "doc_type": "120"
+      "doc_id": "S100Y48B",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-15",
+      "doc_type": "160"
     },
     "7069": {
       "edinet_code": "E35089",
-      "doc_id": "S100XBQ8",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-19",
-      "doc_type": "120"
+      "doc_id": "S100Y4GH",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-15",
+      "doc_type": "160"
     },
     "9258": {
       "edinet_code": "E37199",
-      "doc_id": "S100XBLU",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-19",
-      "doc_type": "120"
+      "doc_id": "S100Y46W",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-15",
+      "doc_type": "160"
     },
     "6046": {
       "edinet_code": "E31448",
-      "doc_id": "S100XBUR",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-19",
-      "doc_type": "120"
+      "doc_id": "S100Y2SH",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-11",
+      "doc_type": "160"
     },
     "4260": {
       "edinet_code": "E37192",
-      "doc_id": "S100XBWA",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-19",
-      "doc_type": "120"
+      "doc_id": "S100Y4JG",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-15",
+      "doc_type": "160"
     },
     "5587": {
       "edinet_code": "E38864",
-      "doc_id": "S100XBLH",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-19",
-      "doc_type": "120"
+      "doc_id": "S100Y3JP",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-14",
+      "doc_type": "160"
     },
     "9553": {
       "edinet_code": "E37742",
-      "doc_id": "S100XBWH",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-19",
-      "doc_type": "120"
+      "doc_id": "S100Y4H3",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-15",
+      "doc_type": "160"
     },
     "7806": {
       "edinet_code": "E34054",
-      "doc_id": "S100XBX1",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-19",
-      "doc_type": "120"
+      "doc_id": "S100Y3NA",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-13",
+      "doc_type": "160"
     },
     "5586": {
       "edinet_code": "E38755",
-      "doc_id": "S100XBVM",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-19",
-      "doc_type": "120"
+      "doc_id": "S100Y3PS",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-14",
+      "doc_type": "160"
     },
     "7372": {
       "edinet_code": "E36629",
-      "doc_id": "S100XBN5",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-19",
-      "doc_type": "120"
+      "doc_id": "S100Y318",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-12",
+      "doc_type": "160"
     },
     "8151": {
       "edinet_code": "E02672",
-      "doc_id": "S100X93C",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-18",
-      "doc_type": "120"
+      "doc_id": "S100Y32Q",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-13",
+      "doc_type": "160"
     },
     "6677": {
       "edinet_code": "E02346",
-      "doc_id": "S100XB6O",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-18",
-      "doc_type": "120"
+      "doc_id": "S100Y2IZ",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-11",
+      "doc_type": "160"
     },
     "9699": {
       "edinet_code": "E04848",
-      "doc_id": "S100XB09",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-18",
-      "doc_type": "120"
+      "doc_id": "S100Y329",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-13",
+      "doc_type": "160"
     },
     "6965": {
       "edinet_code": "E01955",
-      "doc_id": "S100XAWU",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-18",
-      "doc_type": "120"
+      "doc_id": "S100Y3HU",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-15",
+      "doc_type": "160"
     },
     "3494": {
       "edinet_code": "E34271",
-      "doc_id": "S100XAPZ",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-18",
-      "doc_type": "120"
+      "doc_id": "S100Y2OX",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-12",
+      "doc_type": "160"
     },
     "4554": {
       "edinet_code": "E00975",
-      "doc_id": "S100XAU2",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-18",
-      "doc_type": "120"
+      "doc_id": "S100Y2Z6",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-13",
+      "doc_type": "160"
     },
     "6087": {
       "edinet_code": "E27043",
-      "doc_id": "S100XARO",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-18",
-      "doc_type": "120"
+      "doc_id": "S100Y3AZ",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-13",
+      "doc_type": "160"
     },
     "4754": {
       "edinet_code": "E05073",
-      "doc_id": "S100XBF5",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-18",
-      "doc_type": "120"
+      "doc_id": "S100Y471",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-15",
+      "doc_type": "160"
     },
     "3965": {
       "edinet_code": "E32619",
-      "doc_id": "S100XB9Q",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-18",
-      "doc_type": "120"
+      "doc_id": "S100Y46S",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-15",
+      "doc_type": "160"
     },
     "9823": {
       "edinet_code": "E03173",
-      "doc_id": "S100XBFS",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-18",
-      "doc_type": "120"
+      "doc_id": "S100Y4IX",
+      "period_end": "2026-03-31",
+      "submit_date": "2026-05-15",
+      "doc_type": "160"
     },
     "6284": {
       "edinet_code": "E01682",
-      "doc_id": "S100XB87",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-18",
-      "doc_type": "120"
+      "doc_id": "S100Y41M",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-15",
+      "doc_type": "160"
     },
     "7819": {
       "edinet_code": "E23465",
-      "doc_id": "S100XAKV",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-18",
-      "doc_type": "120"
+      "doc_id": "S100Y3XQ",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-15",
+      "doc_type": "160"
     },
     "4320": {
       "edinet_code": "E05233",
@@ -8179,115 +8179,115 @@
     },
     "5036": {
       "edinet_code": "E37833",
-      "doc_id": "S100XB8X",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-18",
-      "doc_type": "120"
+      "doc_id": "S100Y3DA",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-13",
+      "doc_type": "160"
     },
     "6338": {
       "edinet_code": "E01715",
-      "doc_id": "S100XBFK",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-18",
-      "doc_type": "120"
+      "doc_id": "S100Y3R9",
+      "period_end": "2026-03-31",
+      "submit_date": "2026-05-14",
+      "doc_type": "160"
     },
     "9446": {
       "edinet_code": "E05181",
-      "doc_id": "S100XB7R",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-18",
-      "doc_type": "120"
+      "doc_id": "S100Y2H8",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-12",
+      "doc_type": "160"
     },
     "9342": {
       "edinet_code": "E38200",
-      "doc_id": "S100XBCH",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-18",
-      "doc_type": "120"
+      "doc_id": "S100Y3PN",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-14",
+      "doc_type": "160"
     },
     "2410": {
       "edinet_code": "E05419",
-      "doc_id": "S100XBEJ",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-18",
-      "doc_type": "120"
+      "doc_id": "S100Y4D4",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-15",
+      "doc_type": "160"
     },
     "7760": {
       "edinet_code": "E02352",
-      "doc_id": "S100XAL6",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-18",
-      "doc_type": "120"
+      "doc_id": "S100Y3I6",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-13",
+      "doc_type": "160"
     },
     "7361": {
       "edinet_code": "E36420",
-      "doc_id": "S100XB82",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-18",
-      "doc_type": "120"
+      "doc_id": "S100Y2Y1",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-15",
+      "doc_type": "160"
     },
     "9470": {
       "edinet_code": "E00707",
-      "doc_id": "S100XBI1",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-18",
-      "doc_type": "120"
+      "doc_id": "S100Y4GG",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-15",
+      "doc_type": "160"
     },
     "9476": {
       "edinet_code": "E00723",
-      "doc_id": "S100XB7E",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-18",
-      "doc_type": "120"
+      "doc_id": "S100Y33X",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-13",
+      "doc_type": "160"
     },
     "7505": {
       "edinet_code": "E03264",
-      "doc_id": "S100XAQS",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-17",
-      "doc_type": "120"
+      "doc_id": "S100Y3LN",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-14",
+      "doc_type": "160"
     },
     "3939": {
       "edinet_code": "E32603",
-      "doc_id": "S100XAZ4",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-17",
-      "doc_type": "120"
+      "doc_id": "S100Y3HG",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-14",
+      "doc_type": "160"
     },
     "6194": {
       "edinet_code": "E32400",
-      "doc_id": "S100XAZ6",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-17",
-      "doc_type": "120"
+      "doc_id": "S100Y41P",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-14",
+      "doc_type": "160"
     },
     "7681": {
       "edinet_code": "E34455",
-      "doc_id": "S100XACD",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-17",
-      "doc_type": "120"
+      "doc_id": "S100Y3O3",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-15",
+      "doc_type": "160"
     },
     "6316": {
       "edinet_code": "E01568",
-      "doc_id": "S100XAQD",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-17",
-      "doc_type": "120"
+      "doc_id": "S100Y3SM",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-15",
+      "doc_type": "160"
     },
     "4165": {
       "edinet_code": "E34973",
-      "doc_id": "S100XAX3",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-17",
-      "doc_type": "120"
+      "doc_id": "S100Y40F",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-14",
+      "doc_type": "160"
     },
     "6196": {
       "edinet_code": "E32380",
-      "doc_id": "S100XAN1",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-17",
-      "doc_type": "120"
+      "doc_id": "S100Y3Q5",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-14",
+      "doc_type": "160"
     },
     "7446": {
       "edinet_code": "E02810",
@@ -8298,87 +8298,87 @@
     },
     "9233": {
       "edinet_code": "E04275",
-      "doc_id": "S100XAIS",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-17",
-      "doc_type": "120"
+      "doc_id": "S100Y4AH",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-15",
+      "doc_type": "160"
     },
     "2370": {
       "edinet_code": "E05351",
-      "doc_id": "S100XB0H",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-17",
-      "doc_type": "120"
+      "doc_id": "S100Y3SH",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-14",
+      "doc_type": "160"
     },
     "3747": {
       "edinet_code": "E05424",
-      "doc_id": "S100XB0Y",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-17",
-      "doc_type": "120"
+      "doc_id": "S100Y4AG",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-15",
+      "doc_type": "160"
     },
     "6189": {
       "edinet_code": "E32156",
-      "doc_id": "S100XAXC",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-17",
-      "doc_type": "120"
+      "doc_id": "S100Y4D9",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-15",
+      "doc_type": "160"
     },
     "3712": {
       "edinet_code": "E05340",
-      "doc_id": "S100XAQC",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-17",
-      "doc_type": "120"
+      "doc_id": "S100Y2WO",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-12",
+      "doc_type": "160"
     },
     "3176": {
       "edinet_code": "E02548",
-      "doc_id": "S100XABQ",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-17",
-      "doc_type": "120"
+      "doc_id": "S100Y2QS",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-12",
+      "doc_type": "160"
     },
     "3668": {
       "edinet_code": "E27062",
-      "doc_id": "S100XB7G",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-17",
-      "doc_type": "120"
+      "doc_id": "S100Y3NG",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-13",
+      "doc_type": "160"
     },
     "4958": {
       "edinet_code": "E01034",
-      "doc_id": "S100XAHE",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-16",
-      "doc_type": "120"
+      "doc_id": "S100Y3QR",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-14",
+      "doc_type": "160"
     },
     "6200": {
       "edinet_code": "E32495",
-      "doc_id": "S100XAOQ",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-16",
-      "doc_type": "120"
+      "doc_id": "S100Y3GU",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-13",
+      "doc_type": "160"
     },
     "3687": {
       "edinet_code": "E30537",
-      "doc_id": "S100XAQJ",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-16",
-      "doc_type": "120"
+      "doc_id": "S100Y3V7",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-14",
+      "doc_type": "160"
     },
     "3461": {
       "edinet_code": "E31681",
-      "doc_id": "S100XAEN",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-16",
-      "doc_type": "120"
+      "doc_id": "S100Y2XC",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-12",
+      "doc_type": "160"
     },
     "4931": {
       "edinet_code": "E34965",
-      "doc_id": "S100XA5Q",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-16",
-      "doc_type": "120"
+      "doc_id": "S100Y3SY",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-15",
+      "doc_type": "160"
     },
     "3496": {
       "edinet_code": "E34285",
@@ -8389,17 +8389,17 @@
     },
     "3690": {
       "edinet_code": "E30836",
-      "doc_id": "S100XAFO",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-16",
-      "doc_type": "120"
+      "doc_id": "S100Y2PQ",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-11",
+      "doc_type": "160"
     },
     "3245": {
       "edinet_code": "E04072",
-      "doc_id": "S100XAUW",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-16",
-      "doc_type": "120"
+      "doc_id": "S100Y34N",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-12",
+      "doc_type": "160"
     },
     "5971": {
       "edinet_code": "E01442",
@@ -8438,10 +8438,10 @@
     },
     "2926": {
       "edinet_code": "E00515",
-      "doc_id": "S100XAAS",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-15",
-      "doc_type": "120"
+      "doc_id": "S100Y2HM",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-11",
+      "doc_type": "160"
     },
     "7604": {
       "edinet_code": "E03314",
@@ -8452,10 +8452,10 @@
     },
     "7711": {
       "edinet_code": "E01997",
-      "doc_id": "S100XAGE",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-15",
-      "doc_type": "120"
+      "doc_id": "S100Y3YZ",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-15",
+      "doc_type": "160"
     },
     "9627": {
       "edinet_code": "E04896",
@@ -8466,10 +8466,10 @@
     },
     "6176": {
       "edinet_code": "E31776",
-      "doc_id": "S100XAF9",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-15",
-      "doc_type": "120"
+      "doc_id": "S100Y468",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-15",
+      "doc_type": "160"
     },
     "3134": {
       "edinet_code": "E31386",
@@ -8480,10 +8480,10 @@
     },
     "3992": {
       "edinet_code": "E33367",
-      "doc_id": "S100XAHG",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-15",
-      "doc_type": "120"
+      "doc_id": "S100Y3MM",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-13",
+      "doc_type": "160"
     },
     "4382": {
       "edinet_code": "E33880",
@@ -8501,10 +8501,10 @@
     },
     "3698": {
       "edinet_code": "E30996",
-      "doc_id": "S100XAH0",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-15",
-      "doc_type": "120"
+      "doc_id": "S100Y3X6",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-14",
+      "doc_type": "160"
     },
     "7050": {
       "edinet_code": "E34657",
@@ -8564,10 +8564,10 @@
     },
     "2185": {
       "edinet_code": "E22042",
-      "doc_id": "S100X9E8",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-12",
-      "doc_type": "120"
+      "doc_id": "S100Y2XT",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-13",
+      "doc_type": "160"
     },
     "6656": {
       "edinet_code": "E02356",
@@ -8578,17 +8578,17 @@
     },
     "4051": {
       "edinet_code": "E35642",
-      "doc_id": "S100X9ZE",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-12",
-      "doc_type": "120"
+      "doc_id": "S100Y43V",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-15",
+      "doc_type": "160"
     },
     "3769": {
       "edinet_code": "E05476",
-      "doc_id": "S100X9RU",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-12",
-      "doc_type": "120"
+      "doc_id": "S100Y43E",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-15",
+      "doc_type": "160"
     },
     "7901": {
       "edinet_code": "E00715",
@@ -8711,10 +8711,10 @@
     },
     "9746": {
       "edinet_code": "E04807",
-      "doc_id": "S100X9LY",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-11",
-      "doc_type": "120"
+      "doc_id": "S100Y3NT",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-14",
+      "doc_type": "160"
     },
     "2294": {
       "edinet_code": "E03283",
@@ -8767,10 +8767,10 @@
     },
     "6050": {
       "edinet_code": "E24917",
-      "doc_id": "S100X9H5",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-10",
-      "doc_type": "120"
+      "doc_id": "S100Y2PG",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-11",
+      "doc_type": "160"
     },
     "9795": {
       "edinet_code": "E04925",
@@ -8907,10 +8907,10 @@
     },
     "4928": {
       "edinet_code": "E24991",
-      "doc_id": "S100X8TQ",
-      "period_end": "2025-09-30",
-      "submit_date": "2025-12-08",
-      "doc_type": "120"
+      "doc_id": "S100Y34M",
+      "period_end": "2026-09-30",
+      "submit_date": "2026-05-15",
+      "doc_type": "160"
     },
     "3087": {
       "edinet_code": "E03518",
@@ -9033,10 +9033,10 @@
     },
     "2901": {
       "edinet_code": "E00471",
-      "doc_id": "S100X7C2",
-      "period_end": "2025-08-31",
-      "submit_date": "2025-11-28",
-      "doc_type": "120"
+      "doc_id": "S100Y3FX",
+      "period_end": "2026-08-31",
+      "submit_date": "2026-05-14",
+      "doc_type": "160"
     },
     "6678": {
       "edinet_code": "E02345",
@@ -22431,10 +22431,10 @@
     },
     "7512": {
       "edinet_code": "E03268",
-      "doc_id": "S100WUGG",
+      "doc_id": "S100Y36L",
       "period_end": "2026-02-28",
-      "submit_date": "2025-10-15",
-      "doc_type": "160"
+      "submit_date": "2026-05-15",
+      "doc_type": "120"
     },
     "9982": {
       "edinet_code": "E02776",
@@ -23677,24 +23677,24 @@
     },
     "6279": {
       "edinet_code": "E01677",
-      "doc_id": "S100WTJ6",
+      "doc_id": "S100Y3PF",
       "period_end": "2026-02-20",
-      "submit_date": "2025-10-06",
-      "doc_type": "160"
+      "submit_date": "2026-05-14",
+      "doc_type": "120"
     },
     "8276": {
       "edinet_code": "E03081",
-      "doc_id": "S100WSM3",
+      "doc_id": "S100Y2FB",
       "period_end": "2026-02-20",
-      "submit_date": "2025-10-03",
-      "doc_type": "160"
+      "submit_date": "2026-05-11",
+      "doc_type": "120"
     },
     "2778": {
       "edinet_code": "E03415",
-      "doc_id": "S100WT57",
+      "doc_id": "S100Y39Y",
       "period_end": "2026-02-20",
-      "submit_date": "2025-10-03",
-      "doc_type": "160"
+      "submit_date": "2026-05-13",
+      "doc_type": "120"
     },
     "6093": {
       "edinet_code": "E30476",
@@ -23712,38 +23712,38 @@
     },
     "7545": {
       "edinet_code": "E03287",
-      "doc_id": "S100WSLR",
+      "doc_id": "S100Y3CW",
       "period_end": "2026-02-20",
-      "submit_date": "2025-10-02",
-      "doc_type": "160"
+      "submit_date": "2026-05-13",
+      "doc_type": "120"
     },
     "8227": {
       "edinet_code": "E03137",
-      "doc_id": "S100WRVW",
+      "doc_id": "S100Y2PP",
       "period_end": "2026-02-20",
-      "submit_date": "2025-09-30",
-      "doc_type": "160"
+      "submit_date": "2026-05-12",
+      "doc_type": "120"
     },
     "8217": {
       "edinet_code": "E03119",
-      "doc_id": "S100WRRE",
+      "doc_id": "S100Y362",
       "period_end": "2026-02-20",
-      "submit_date": "2025-09-30",
-      "doc_type": "160"
+      "submit_date": "2026-05-13",
+      "doc_type": "120"
     },
     "3333": {
       "edinet_code": "E03439",
-      "doc_id": "S100WRG4",
+      "doc_id": "S100Y2X4",
       "period_end": "2026-02-20",
-      "submit_date": "2025-09-29",
-      "doc_type": "160"
+      "submit_date": "2026-05-13",
+      "doc_type": "120"
     },
     "9976": {
       "edinet_code": "E03219",
-      "doc_id": "S100WQW9",
+      "doc_id": "S100Y3VC",
       "period_end": "2026-02-20",
-      "submit_date": "2025-09-25",
-      "doc_type": "160"
+      "submit_date": "2026-05-14",
+      "doc_type": "120"
     },
     "4875": {
       "edinet_code": "E05958",
@@ -23782,10 +23782,10 @@
     },
     "4933": {
       "edinet_code": "E35928",
-      "doc_id": "S100WHYH",
+      "doc_id": "S100Y415",
       "period_end": "2025-12-31",
-      "submit_date": "2025-08-08",
-      "doc_type": "160"
+      "submit_date": "2026-05-15",
+      "doc_type": "120"
     },
     "2502": {
       "edinet_code": "E00394",
