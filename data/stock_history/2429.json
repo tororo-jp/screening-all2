@@ -42,5 +42,16 @@
     "roe": 13.5,
     "roa": 3.9,
     "div_yield": 3.3
+  },
+  {
+    "date": "2026-05-29",
+    "price": 2407,
+    "market_cap": 433.6,
+    "net_cash_ratio": 0.33,
+    "pbr": 0.81,
+    "per": 6.0,
+    "roe": 13.5,
+    "roa": 3.9,
+    "div_yield": 3.3
   }
 ]
